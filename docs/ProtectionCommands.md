@@ -1,4 +1,4 @@
-![CursorRIPER♦Σ](./res/github-header-sigma-sm.png)
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # Protection System Command Reference
 *v1.0 | Created: 2025-04-09*
 
