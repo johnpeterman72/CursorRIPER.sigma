@@ -8,7 +8,7 @@
 
 ## 📚 Overview
 
-CursorRIPER♦Σ is a highly optimized, symbolic implementation of the CursorRIPER framework designed to enhance AI-assisted software development. It uses a symbolic notation system with mathematical operators, emojis, and Greek letters to compress complex development workflows into a minimal, yet comprehensive, token footprint.
+CursorRIPER♦Σ is a highly optimized, symbolic implementation of the [CursorRIPER framework](https://github.com/johnpeterman72/CursorRIPER) designed to enhance AI-assisted software development. It uses a symbolic notation system with mathematical operators, emojis, and Greek letters to compress complex development workflows into a minimal, yet comprehensive, token footprint.
 
 The framework reduces ~15,000 words of instructions to under 1,000 while preserving full functionality, making it dramatically more efficient for AI token usage.
 The idea came from [Tof](https://forum.cursor.com/t/user-rules-with-memory-errors-tracking-rules-generation/68321)
