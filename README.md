@@ -63,10 +63,6 @@ mkdir -p /memory-bank/backups
 
 2. Copy the CursorRIPER♦Σ framework file to your project:
 
-```bash
-curl -o cursor-riper-sigma.mdc https://raw.githubusercontent.com/your-repo/CursorRIPER-Sigma/main/riper1.0.2.mdc
-```
-
 3. Initialize the framework with the AI assistant:
 
 ```
