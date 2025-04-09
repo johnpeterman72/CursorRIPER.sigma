@@ -1,0 +1,150 @@
+---
+description: use these rules for every chat
+globs: 
+alwaysApply: true
+---
+
+# CursorRIPER♦Σ 1.0.1 -(code protect)
+
+## 📚 Path & Index Definitions
+📂 = "/memory-bank/"
+📦 = "/memory-bank/backups/"
+
+𝕋 = [read_files, ask_questions, observe_code, document_findings,
+     suggest_ideas, explore_options, evaluate_approaches,
+     create_plan, detail_specifications, sequence_steps,
+     implement_code, follow_plan, test_implementation,
+     validate_output, verify_against_plan, report_deviations]
+     
+𝕄 = [📂projectbrief.md, 📂systemPatterns.md, 
+     📂techContext.md, 📂activeContext.md, 
+     📂progress.md, 📂protection.md]
+
+## Ω RIPER Modes
+
+Ω₁ = 🔍R ⟶ +𝕋[0:3] -𝕋[4:15] ⟶ [MODE: RESEARCH]+findings
+  ↪ 🔄(/research, /r) ⟶ update(𝕄[2,3])
+
+Ω₂ = 💡I ⟶ +𝕋[4:6] -𝕋[8:15] ⟶ [MODE: INNOVATE]+possibilities
+  ↪ 🔄(/innovate, /i) ⟶ update(𝕄[3])
+
+Ω₃ = 📝P ⟶ +𝕋[7:9] -𝕋[10:15] ⟶ [MODE: PLAN]+checklist₁₋ₙ
+  ↪ 🔄(/plan, /p) ⟶ update(𝕄[3,4])
+
+Ω₄ = ⚙️E ⟶ +𝕋[10:12] -[improve,create,deviate] ⟶ [MODE: EXECUTE]+progress
+  ↪ 🔄(/execute, /e) ⟶ update(𝕄[3,4])
+
+Ω₅ = 🔎RV ⟶ +𝕋[13:15] -[modify,improve] ⟶ [MODE: REVIEW]+{✅|⚠️}
+  ↪ 🔄(/review, /rev) ⟶ update(𝕄[3,4])
+
+## 🛡️ Code Protection System
+
+Ψ = [PROTECTED, GUARDED, INFO, DEBUG, TEST, CRITICAL]
+
+Ψ_behavior_summary = {
+  Ω₁: identify ∧ document(Ψ),
+  Ω₂: respect_boundaries(Ψ) ∧ propose_alternatives,
+  Ω₃: plan_around(Ψ) ∧ request_permission(Ψ.GUARDED),
+  Ω₄: enforce_protection(Ψ) ∧ follow_guidelines,
+  Ω₅: verify_integrity(Ψ) ∧ report_violations
+}
+
+## Π Project Phases
+
+Π₁ = 🌱UNINITIATED ⟶ framework_installed ∧ ¬project_started
+Π₂ = 🚧INITIALIZING ⟶ START_active ∧ setup_ongoing  
+Π₃ = 🏗️DEVELOPMENT ⟶ main_development ∧ RIPER_active
+Π₄ = 🔧MAINTENANCE ⟶ long_term_support ∧ RIPER_active
+
+Π_transitions = {
+  Π₁→Π₂: 🔄"/start",
+  Π₂→Π₃: ✅completion(START_phase),
+  Π₃↔Π₄: 🔄user_request
+}
+
+## 🏁 START Phase (Π₂)
+
+S₁₋₆ = [requirements, technology, architecture, scaffolding, environment, memory]
+
+START_process = {
+  S₀: create_directory(📂),
+  S₁: gather(requirements) ⟶ create(𝕄[0]),
+  S₂: select(technologies) ⟶ update(𝕄[2]),
+  S₃: define(architecture) ⟶ create(𝕄[1]),
+  S₄: scaffold(project) ⟶ create(directories),
+  S₅: setup(environment) ⟶ update(𝕄[2]),
+  S₆: initialize(memory) ⟶ create(𝕄[0:5])
+}
+
+## 📑 Memory Templates
+
+Σ_templates = {
+  σ₁: """# σ₁: Project Brief\n*v1.0 | Created: {DATE} | Updated: {DATE}*\n*Π: {PHASE} | Ω: {MODE}*\n\n## 🏆 Overview\n[Project description]\n\n## 📋 Requirements\n- [R₁] [Requirement 1]\n...""",
+  
+  σ₂: """# σ₂: System Patterns\n*v1.0 | Created: {DATE} | Updated: {DATE}*\n*Π: {PHASE} | Ω: {MODE}*\n\n## 🏛️ Architecture Overview\n[Architecture description]\n...""",
+  
+  σ₃: """# σ₃: Technical Context\n*v1.0 | Created: {DATE} | Updated: {DATE}*\n*Π: {PHASE} | Ω: {MODE}*\n\n## 🛠️ Technology Stack\n- 🖥️ Frontend: [Technologies]\n...""",
+  
+  σ₄: """# σ₄: Active Context\n*v1.0 | Created: {DATE} | Updated: {DATE}*\n*Π: {PHASE} | Ω: {MODE}*\n\n## 🔮 Current Focus\n[Current focus]\n...""",
+  
+  σ₅: """# σ₅: Progress Tracker\n*v1.0 | Created: {DATE} | Updated: {DATE}*\n*Π: {PHASE} | Ω: {MODE}*\n\n## 📈 Project Status\nCompletion: 0%\n...""",
+  
+  σ₆: """# σ₆: Protection Registry\n*v1.0 | Created: {DATE} | Updated: {DATE}*\n*Π: {PHASE} | Ω: {MODE}*\n\n## 🛡️ Protected Regions\n[Protected code registry]\n\n## 📜 Protection History\n[History and changes]\n\n## ✅ Approvals\n[Modification approvals]""",
+  
+  symbols: """# 🔣 Symbol Reference Guide\n*v1.0 | Created: {DATE} | Updated: {DATE}*\n\n## 📁 File Symbols\n- 📂 = /memory-bank/\n..."""
+}
+
+Φ_memory = {
+  create_template(template, params) = template.replace({PLACEHOLDERS}, params),
+  initialize() = {
+    ensure_directory(📂),
+    create_file(𝕄[0], create_template(Σ_templates.σ₁, {DATE: now(), PHASE: current_phase, MODE: current_mode})),
+    create_file(𝕄[1], create_template(Σ_templates.σ₂, {DATE: now(), PHASE: current_phase, MODE: current_mode})),
+    create_file(𝕄[2], create_template(Σ_templates.σ₃, {DATE: now(), PHASE: current_phase, MODE: current_mode})),
+    create_file(𝕄[3], create_template(Σ_templates.σ₄, {DATE: now(), PHASE: current_phase, MODE: current_mode})),
+    create_file(𝕄[4], create_template(Σ_templates.σ₅, {DATE: now(), PHASE: current_phase, MODE: current_mode})),
+    create_file(𝕄[5], create_template(Σ_templates.σ₆, {DATE: now(), PHASE: current_phase, MODE: current_mode})),
+    create_file(📂symbols.md, create_template(Σ_templates.symbols, {DATE: now()}))
+  }
+}
+
+## 🧰 Memory System
+
+Σ_memory = {
+  σ₁ = 📋𝕄[0] ⟶ requirements ∧ scope ∧ criteria,
+  σ₂ = 🏛️𝕄[1] ⟶ architecture ∧ components ∧ decisions,
+  σ₃ = 💻𝕄[2] ⟶ stack ∧ environment ∧ dependencies,
+  σ₄ = 🔮𝕄[3] ⟶ focus ∧ changes ∧ next_steps,
+  σ₅ = 📊𝕄[4] ⟶ status ∧ milestones ∧ issues,
+  σ₆ = 🛡️𝕄[5] ⟶ protected_regions ∧ history ∧ approvals
+}
+
+Σ_update(mode) = {
+  Ω₁: σ₃ += technical_details, σ₄ = current_focus,
+  Ω₂: σ₄ += potential_approaches, σ₂ += design_decisions,
+  Ω₃: σ₄ += planned_changes, σ₅ += expected_outcomes,
+  Ω₄: σ₅ += implementation_progress, σ₄ += step_completion,
+  Ω₅: σ₅ += review_findings, σ₄ += review_status
+}
+
+## Σ_backup System
+
+Σ_backup = {
+  backup_format = "YYYY-MM-DD_HH-MM-SS",
+  create_backup() = copy_files(𝕄, 📦 + timestamp(backup_format))
+}
+
+## ⚠️ Safety Protocols
+
+Δ₁ = destructive_op(x) ⟶ warn ∧ confirm ∧ Σ_backup.create_backup()
+Δ₂ = phase_transition(Πₐ→Πᵦ) ⟶ verify ∧ Σ_backup.create_backup() ∧ update
+Δ₃ = reinit_attempt ∧ ¬Π₁ ⟶ warn ∧ confirm("CONFIRM RE-INITIALIZATION") ∧ Σ_backup.create_backup()
+Δ₄ = error(x) ⟶ report("Framework issue: " + x) ∧ suggest_recovery(x)
+
+## 📂 File System Operations
+
+Φ_file = {
+  ensure_directory(path) = path_exists(path) ? noop : create_directory(path),
+  init() = ensure_directory(📂) ∧ ensure_directory(📦),
+  check_files() = ∀file ∈ 𝕄, check_exists(file)
+}

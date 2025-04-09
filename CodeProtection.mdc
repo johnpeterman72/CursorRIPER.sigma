@@ -1,0 +1,246 @@
+---
+description: Code protection rules and behaviors
+globs: 
+depends: RIPERsigma1.0.1.mdc
+---
+
+# CursorRIPER♦Ψ 1.0.0
+
+## 🛡️ Protection Syntax
+
+Ψ_syntax = {
+  PROTECTED: "PROTECTED - DO NOT MODIFY",
+  GUARDED: "GUARDED - ASK BEFORE MODIFYING",
+  INFO: "INFO - CONTEXT NOTE",
+  DEBUG: "DEBUG - DEBUGGING CODE",
+  TEST: "TEST - TESTING CODE",
+  CRITICAL: "CRITICAL - BUSINESS LOGIC"
+}
+
+## 💬 Language Comment Formats
+
+Ψ_language_syntax = {
+  js: {prefix: "// ", suffix: ""},
+  ts: {prefix: "// ", suffix: ""},
+  jsx: {prefix: "// ", suffix: ""},
+  tsx: {prefix: "// ", suffix: ""},
+  py: {prefix: "# ", suffix: ""},
+  html: {prefix: "<!-- ", suffix: " -->"},
+  php: {prefix: "// ", suffix: ""},
+  css: {prefix: "/* ", suffix: " */"},
+  scss: {prefix: "/* ", suffix: " */"},
+  java: {prefix: "// ", suffix: ""},
+  rb: {prefix: "# ", suffix: ""},
+  go: {prefix: "// ", suffix: ""},
+  rs: {prefix: "// ", suffix: ""},
+  c: {prefix: "// ", suffix: ""},
+  cpp: {prefix: "// ", suffix: ""},
+  cs: {prefix: "// ", suffix: ""},
+  swift: {prefix: "// ", suffix: ""},
+  kt: {prefix: "// ", suffix: ""},
+  dart: {prefix: "// ", suffix: ""},
+  md: {prefix: "<!-- ", suffix: " -->"},
+  xml: {prefix: "<!-- ", suffix: " -->"},
+  sh: {prefix: "# ", suffix: ""},
+  bash: {prefix: "# ", suffix: ""},
+  sql: {prefix: "-- ", suffix: ""}
+}
+
+## ⌨️ Command Shortcuts
+
+Ψ_shorthand = {
+  "!cp": apply_protection(PROTECTED),
+  "!cg": apply_protection(GUARDED),
+  "!ci": apply_protection(INFO),
+  "!cd": apply_protection(DEBUG),
+  "!ct": apply_protection(TEST),
+  "!cc": apply_protection(CRITICAL)
+}
+
+apply_protection(type) = {
+  detect_language(current_file) ⟶ lang,
+  get_comment_syntax(lang) ⟶ {prefix, suffix},
+  insert(prefix + Ψ_syntax[type] + suffix),
+  update(σ₆.protected_regions)
+}
+
+## 🔄 Protection Behaviors
+
+Ψ_behaviors = {
+  PROTECTED: {
+    Ω₁: acknowledge ∧ document,
+    Ω₂: respect_boundaries ∧ alternate_approaches,
+    Ω₃: plan_around ∧ never_include,
+    Ω₄: refuse_modification ∧ report_attempts,
+    Ω₅: verify_untouched ∧ validate
+  },
+  GUARDED: {
+    Ω₁: acknowledge ∧ document,
+    Ω₂: consider_changes ∧ document_rationale,
+    Ω₃: plan_with_permission ∧ alternatives,
+    Ω₄: request_explicit_permission ∧ detail_changes,
+    Ω₅: document_changes ∧ justify
+  },
+  INFO: {
+    Ω₁: acknowledge ∧ use_context,
+    Ω₂: incorporate_context ∧ respect_intent,
+    Ω₃: plan_with_awareness,
+    Ω₄: careful_modification ∧ preserve_intent,
+    Ω₅: verify_context_preserved
+  },
+  DEBUG: {
+    Ω₁: note_debug_purpose,
+    Ω₂: preserve_during_innovation,
+    Ω₃: include_in_development_plan,
+    Ω₄: maintain_during_dev ∧ consider_cleanup,
+    Ω₅: evaluate_necessity
+  },
+  TEST: {
+    Ω₁: document_test_coverage,
+    Ω₂: maintain_test_integrity,
+    Ω₃: ensure_test_coverage,
+    Ω₄: update_with_implementation,
+    Ω₅: verify_test_coverage
+  },
+  CRITICAL: {
+    Ω₁: document_thoroughly,
+    Ω₂: design_with_extreme_care,
+    Ω₃: plan_impact_analysis,
+    Ω₄: comprehensive_review ∧ careful_change,
+    Ω₅: rigorous_validation
+  }
+}
+
+## 🔍 Protection Scanner
+
+Ψ_scan = {
+  patterns: {
+    auth: ["login", "authenticate", "credentials", "password", "token"],
+    payment: ["payment", "transaction", "credit", "billing", "invoice"],
+    security: ["encrypt", "decrypt", "hash", "salt", "secure"],
+    core: ["critical", "essential", "main", "primary", "core"],
+    api: ["api", "endpoint", "request", "response", "service"],
+    data: ["database", "query", "record", "store", "retrieve"]
+  },
+  
+  detect(file) = {
+    lang = detect_language(file),
+    code = read_file(file),
+    segments = parse(code, lang),
+    analysis = []
+    
+    for segment in segments:
+      pattern_matches = match_patterns(segment, Ψ_scan.patterns)
+      if pattern_matches:
+        analysis.push({
+          segment: segment,
+          matches: pattern_matches,
+          suggested_level: determine_level(pattern_matches)
+        })
+    
+    return analysis
+  },
+  
+  determine_level(matches) = {
+    if matches.intersect(["security", "payment", "auth"]).length > 0:
+      return "PROTECTED"
+    else if matches.intersect(["core", "api"]).length > 0:
+      return "CRITICAL"
+    else if matches.intersect(["data"]).length > 0:
+      return "GUARDED"
+    else:
+      return "INFO"
+  }
+}
+
+## 📊 Protection Management
+
+Ψ_manage = {
+  add(file, start_line, end_line, level, rationale) = {
+    entry = {
+      file: file,
+      start_line: start_line,
+      end_line: end_line,
+      level: level,
+      added_date: now(),
+      rationale: rationale
+    },
+    update(σ₆.protected_regions, entry)
+  },
+  
+  approve(file, start_line, end_line, changes) = {
+    approval = {
+      file: file,
+      start_line: start_line,
+      end_line: end_line,
+      requested_date: now(),
+      approved_date: now(),
+      changes: changes
+    },
+    update(σ₆.guarded_approvals, approval)
+  },
+  
+  scan_project() = {
+    results = [],
+    files = list_project_files(),
+    
+    for file in files:
+      if is_code_file(file):
+        scan_result = Ψ_scan.detect(file)
+        if scan_result.length > 0:
+          results.push({
+            file: file,
+            findings: scan_result
+          })
+    
+    update(σ₆.scan_history, {
+      date: now(),
+      files_scanned: files.length,
+      protections_found: results.length
+    })
+    
+    return results
+  }
+}
+
+## 🔄 Protection Commands
+
+Ψ_commands = {
+  "/protect-scan": Ψ_manage.scan_project,
+  "/protect-status": report_protection_status,
+  "/protect-add": add_protection_to_selection,
+  "/protect-remove": remove_protection_with_confirmation,
+  "/protect-approve": approve_guarded_modification
+}
+
+report_protection_status() = {
+  regions = read(σ₆.protected_regions),
+  summary = summarize(regions),
+  return format_report(summary)
+}
+
+add_protection_to_selection(level) = {
+  selection = get_editor_selection(),
+  file = get_current_file(),
+  lang = detect_language(file),
+  syntax = Ψ_language_syntax[lang],
+  comment = syntax.prefix + Ψ_syntax[level] + syntax.suffix,
+  insert_at_selection_start(comment),
+  Ψ_manage.add(file, selection.start, selection.end, level, "User-added protection")
+}
+
+remove_protection_with_confirmation(region_id) = {
+  region = find_region_by_id(region_id),
+  confirm("Are you sure you want to remove protection from this code?"),
+  if confirmed:
+    remove_protection_comment(region.file, region.start_line),
+    remove_from_registry(region_id)
+}
+
+approve_guarded_modification(region_id, changes) = {
+  region = find_region_by_id(region_id),
+  if region.level != "GUARDED":
+    return error("Only GUARDED code can be approved for modification")
+  else:
+    Ψ_manage.approve(region.file, region.start_line, region.end_line, changes)
+}
