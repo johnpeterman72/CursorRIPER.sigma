@@ -4,7 +4,7 @@
 
 ## 🛡️ Protection Shorthand Commands
 
-When using Command-K in the code editor, type:
+(THIS IS CURRENTLY NOT WORKING IN THE CMD-K.  I AM WORKING ON IT) When using Command-K in the code editor, type:
 
 | Shorthand | Expands To            | Protection Level |
 |-----------|------------------------|------------------|
