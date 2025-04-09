@@ -131,7 +131,7 @@ Add code protection with shorthand commands:
 !cc - Add CRITICAL comment
 ```
 
-See [Protection Commands](./ProtectionCommands.md) for full documentation.
+See [Protection Commands](./docs/ProtectionCommands.md) for full documentation.
 
 ## ⚠️ Safety Features
 
@@ -143,7 +143,7 @@ See [Protection Commands](./ProtectionCommands.md) for full documentation.
 
 ## 🔣 Symbol Reference
 
-See the [Symbol Reference Guide](./symbols.md) for a complete list of symbols and notation used in the framework.
+See the [Symbol Reference Guide](./docs/symbols.md) for a complete list of symbols and notation used in the framework.
 
 ## 🤝 Contributing
 
