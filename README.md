@@ -104,7 +104,7 @@ The framework automatically maintains five key memory files:
 
 ## 🔣 Symbol Reference
 
-See the [Symbol Reference Guide](./symbols.md) for a complete list of symbols and notation used in the framework.
+See the [Symbol Reference Guide](./memory-bank/symbols.md) for a complete list of symbols and notation used in the framework.
 
 ## 🤝 Contributing
 
