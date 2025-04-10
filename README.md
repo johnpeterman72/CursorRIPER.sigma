@@ -212,7 +212,7 @@ Each mode has a specific set of allowed CRUD operations:
 Check and verify permissions with shorthand commands:
 
 ```
-!cp - Check permissions for current mode
+!ckp - Check permissions for current mode
 !pm - Check if operation is permitted
 !sp - Show permissions for specified mode
 !vm - Verify mode appropriate for operation
