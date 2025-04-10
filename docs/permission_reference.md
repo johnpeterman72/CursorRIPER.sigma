@@ -46,7 +46,7 @@
 
 ## 🔒 Permission Command Examples
 ```
-!cp = Check permissions for current mode
+!ckp = Check permissions for current mode
 !pm <operation> = Check if operation is permitted in current mode
 !sp <mode> = Show all permissions for specified mode
 !vm <operation> = Verify mode appropriate for operation
