@@ -1,7 +1,7 @@
 ---
 description: Code protection rules and behaviors
-globs: 
-depends: RIPERsigma1.0.1.mdc
+globs: **/*.*
+alwaysApply: true
 ---
 
 # CursorRIPER♦Ψ 1.0.0
