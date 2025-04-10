@@ -1,13 +1,22 @@
 # σ₄: Active Context
-*v1.0 | Created: 2025-04-09 | Updated: 2025-04-09*
+*v1.1 | Created: 2025-04-09 | Updated: 2025-04-10*
 *Π: DEVELOPMENT | Ω: RESEARCH*
 
 ## 🔮 Current Focus
 [Current work description]
 
+## 📎 Context References
+- 📄 Active Files: []
+- 💻 Active Code: []
+- 📚 Active Docs: []
+- 📁 Active Folders: []
+- 🔄 Git References: []
+- 📏 Active Rules: []
+
 ## 🔄 Recent Changes
-- [2025-04-09] [C₁] [Change description]
-- [2025-04-08] [C₂] [Change description]
+- [2025-04-10] [C₁] [Added context references section for @ symbols integration]
+- [2025-04-09] [C₂] [Change description]
+- [2025-04-08] [C₃] [Change description]
 
 ## 🧠 Active Decisions
 - [D₁] [⏳] [Decision 1 description]
@@ -28,5 +37,11 @@
 - [⏳] [T₃] [In-progress task 1]
 - [🔜] [T₄] [Planned task 1]
 
+## 📡 Context Status
+- 🟢 Active: []
+- 🟡 Partially Relevant: []
+- 🟣 Essential: []
+- 🔴 Deprecated: []
+
 ---
-*σ₄ captures current state and immediate next steps*
+*σ₄ captures current state, context references, and immediate next steps*
