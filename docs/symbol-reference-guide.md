@@ -1,5 +1,5 @@
 # 🔣 CursorRIPER Σ Comprehensive Symbol Reference Guide
-*v2.0 | Created: 2025-04-10*
+*v2.1 | Created: 2025-04-10 | Updated: 2025-04-10*
 
 ## 📁 File Symbols
 
@@ -51,6 +51,24 @@
 | Γ₆     | 🔄    | @Git          | Git history reference |
 | Γ₇     | 📝    | @Notepads     | Notepad reference |
 | Γ₈     | 📌    | #Files        | File context without reference |
+| Γ₉     | 🗃️    | @Filesystem   | Filesystem reference |
+
+## 📁 Filesystem Symbols (Φ)
+
+| Symbol | Description |
+|--------|-------------|
+| Φ_fs   | MCP Filesystem operations set |
+| Φ_fs.read | Read file content |
+| Φ_fs.read_multi | Read multiple files |
+| Φ_fs.write | Write to file |
+| Φ_fs.edit | Edit file content |
+| Φ_fs.create_dir | Create directory |
+| Φ_fs.list | List directory contents |
+| Φ_fs.tree | Get directory tree structure |
+| Φ_fs.move | Move or rename file/directory |
+| Φ_fs.search | Search for files/patterns |
+| Φ_fs.info | Get file metadata |
+| Φ_fs.allowed | List allowed directories |
 
 ## 🔐 Permission Symbols (ℙ)
 
@@ -63,6 +81,16 @@
 | ℙ(Ω₄) | {R: ✓, C: ✓, U: ✓, D: ~} - Execute mode permissions |
 | ℙ(Ω₅) | {R: ✓, C: ✗, U: ✗, D: ✗} - Review mode permissions |
 
+## 🔍 Filesystem Permission Matrix (ℙΦ)
+
+| Mode | Read | Create | Update | Delete | Description |
+|------|------|--------|--------|--------|-------------|
+| Ω₁ (Research) | ✓ | ✗ | ✗ | ✗ | Read-only access |
+| Ω₂ (Innovate) | ✓ | ~ | ✗ | ✗ | Read with conceptual creation |
+| Ω₃ (Plan) | ✓ | ✓ | ~ | ✗ | Read/create with limited updates |
+| Ω₄ (Execute) | ✓ | ✓ | ✓ | ~ | Full access with limited deletion |
+| Ω₅ (Review) | ✓ | ✗ | ✗ | ✗ | Read-only access |
+
 ## 🔍 Operation Sets (𝕆)
 
 | Symbol | Description |
@@ -70,6 +98,10 @@
 | 𝕆ᵣₑₐₗ | {modify_files, write_code, delete_content, refactor} - Real operations |
 | 𝕆ᵥᵢᵣₜᵤₐₗ | {suggest_ideas, explore_concepts, evaluate_approaches} - Virtual operations |
 | 𝕆ₒᵦₛₑᵣᵥₑ | {read_files, analyze_content, identify_patterns} - Observe operations |
+| 𝕆fs_read | {read, read_multi, list, tree, search, info, allowed} - Filesystem read operations |
+| 𝕆fs_create | {write, create_dir} - Filesystem create operations |
+| 𝕆fs_update | {edit, move} - Filesystem update operations |
+| 𝕆fs_delete | {delete} - Filesystem delete operations |
 
 ## 📊 Status Indicators
 
@@ -140,6 +172,7 @@
 | !ag     | Add Git | Add git reference to context |
 | !an     | Add Notepad | Add notepad reference to context |
 | !pf     | Pin File | Pin file to context without reference |
+| !afs    | Add Filesystem | Add filesystem reference to context |
 | !cs     | Context Status | Set context reference status |
 | !cr     | Context Remove | Remove context reference |
 | !cc     | Context Clear | Clear all context references |
@@ -154,17 +187,42 @@
 | !sp | Show permissions for specified mode |
 | !vm | Verify mode appropriate for operation |
 
-**Note:** The permission command "!ckp" (Check permissions) was previously documented as "!cp" which caused a conflict with the protection command "!cp" (Add PROTECTED comment). This has been corrected.
+## 📁 Filesystem Commands (SΦ)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !fr | Φ_fs.read | Read file content |
+| !fm | Φ_fs.read_multi | Read multiple files |
+| !fw | Φ_fs.write | Write to file |
+| !fe | Φ_fs.edit | Edit file content |
+| !fc | Φ_fs.create_dir | Create directory |
+| !fl | Φ_fs.list | List directory contents |
+| !ft | Φ_fs.tree | Get directory tree structure |
+| !fv | Φ_fs.move | Move or rename file/directory |
+| !fs | Φ_fs.search | Search for files/patterns |
+| !fi | Φ_fs.info | Get file metadata |
+| !fa | Φ_fs.allowed | List allowed directories |
 
 ## 🔄 Mode-Context Mapping
 
 | Mode | Symbol | Default Context | Description |
 |------|--------|----------------|-------------|
-| RESEARCH | 🔍 Ω₁ | [Γ₄, Γ₂, Γ₆] | Docs, Folders, Git |
+| RESEARCH | 🔍 Ω₁ | [Γ₄, Γ₂, Γ₆, Γ₉] | Docs, Folders, Git, Filesystem |
 | INNOVATE | 💡 Ω₂ | [Γ₃, Γ₄, Γ₇] | Code, Docs, Notepads |
-| PLAN | 📝 Ω₃ | [Γ₁, Γ₂, Γ₅] | Files, Folders, Rules |
-| EXECUTE | ⚙️ Ω₄ | [Γ₃, Γ₁, Γ₈] | Code, Files, Pinned Files |
-| REVIEW | 🔎 Ω₅ | [Γ₃, Γ₁, Γ₆] | Code, Files, Git |
+| PLAN | 📝 Ω₃ | [Γ₁, Γ₂, Γ₅, Γ₉] | Files, Folders, Rules, Filesystem |
+| EXECUTE | ⚙️ Ω₄ | [Γ₃, Γ₁, Γ₈, Γ₉] | Code, Files, Pinned Files, Filesystem |
+| REVIEW | 🔎 Ω₅ | [Γ₃, Γ₁, Γ₆, Γ₉] | Code, Files, Git, Filesystem |
+
+## 🛡️ Filesystem Protection Levels (ΨΦ)
+
+| Level | Name | Operations | Description |
+|-------|------|------------|-------------|
+| ψ₁ | Public | All operations | Full access |
+| ψ₂ | Visible | read, list, search, info | Read and list only |
+| ψ₃ | Limited | read, info | Basic read only |
+| ψ₄ | Private | info | Metadata only |
+| ψ₅ | Restricted | none | No access |
+| ψ₆ | Forbidden | none | No access, enforced |
 
 ## 🔗 Cross-Reference Notation
 
@@ -176,6 +234,8 @@
 | Protection+Context | [Ψₙ+Γₘ:item] | [Ψ₁+Γ₃:auth()] | Protected context reference |
 | Permission | [ℙ(Ω₁):read_only] | [ℙ(Ω₁):read_only] | Reference to mode permissions |
 | Operation Set | [𝕊(Ω₄):𝕆ᵣₑₐₗ] | [𝕊(Ω₄):𝕆ᵣₑₐₗ] | Reference to mode operations |
+| Filesystem | [Γ₉:path/to/file.js] | [Γ₉:src/main.js] | Filesystem path reference |
+| Filesystem Operation | [Φ_fs.read:path] | [Φ_fs.read:config.json] | Filesystem operation reference |
 
 ## 🛡️ Protection-Context Integration
 
@@ -187,6 +247,8 @@
 | 🐞💻 | Ψ₄ + Γ₃ | Debug code |
 | 🧪💻 | Ψ₅ + Γ₃ | Test code |
 | ⚠️💻 | Ψ₆ + Γ₃ | Critical code |
+| 🔒🗃️ | Ψ₁ + Γ₉ | Protected filesystem path |
+| 🛡️🗃️ | Ψ₂ + Γ₉ | Guarded filesystem path |
 
 ## 📊 Context Operations
 
@@ -208,6 +270,16 @@
 | ΦΓ₃ | persist(Γₙ, 📂) | Save context to memory |
 | ΦΓ₄ | retrieve(Γₙ, 📂) | Load context from memory |
 | ΦΓ₅ | rank(Γₙ, relevance) | Prioritize context |
+
+## 📁 Filesystem Functions (Υ_fs)
+
+| Function | Syntax | Description |
+|----------|--------|-------------|
+| Υ_fs.validate_path | validate_path(path) | Validate file path exists and is allowed |
+| Υ_fs.validate_content | validate_content(content) | Validate content safety and size |
+| Υ_fs.validate_operation | validate_operation(op, Ω) | Validate operation is permitted in mode |
+| execute_fs_op | execute_fs_op(op, ...args) | Execute filesystem operation with validation |
+| has_mcp_filesystem | has_mcp_filesystem() | Check if MCP filesystem is available |
 
 ## 🔄 Context Transition Functions
 
@@ -231,6 +303,9 @@
 // Add specific file to context
 !af src/main.js
 
+// Add filesystem path to context
+!afs /path/to/project/
+
 // Add code element with status
 !ac validateUser()
 !cs validateUser() essential
@@ -251,10 +326,35 @@ The 🔒💻 auth() function should not be modified
 ΦΓ₂(Γ₃, "validate") // Filter code context for validation functions
 
 // Check permissions for current mode
-!cp
+!ckp
 
 // Verify if operation is permitted in current mode
 !pm modify_files
+```
+
+## 📁 Filesystem Usage Examples
+
+```
+// Read a file
+!fr("path/to/file.js")
+
+// List directory contents
+!fl("src/components")
+
+// Search for JavaScript files
+!fs("src", "*.js")
+
+// Write to a file (Execute mode only)
+!fw("output.txt", "File content")
+
+// Get file metadata
+!fi("config.json")
+
+// Create directory (Plan or Execute mode)
+!fc("new-directory")
+
+// Reference a filesystem path in cross-reference
+The implementation in [Γ₉:src/utils/helpers.js] handles this case
 ```
 
 ## 📋 Implementation Examples
@@ -266,6 +366,7 @@ The 🔒💻 auth() function should not be modified
 - Active Files: [fileA, fileB, ...]
 - Active Code: [functionA, classB, ...]
 - Active Docs: [docX, docY, ...]
+- Active Filesystem: [path1, path2, ...]
 - Context Command: !ac functionA
 ```
 
@@ -280,6 +381,26 @@ The 🔒💻 auth() function should not be modified
   clear_references() = {
     active_references = []
     update_file(𝕄[3], "")
+  }
+}
+```
+
+### Filesystem Operation Validation
+```
+execute_fs_op(op, ...args) = {
+  if (!has_mcp_filesystem()) {
+    return report_error("MCP Filesystem not available")
+  }
+  
+  if (Υ_fs.validate_operation(op, current_mode)) {
+    if (is_destructive(op)) {
+      warn("This operation will modify files") ∧ 
+      confirm ∧ 
+      Σ_backup.create_backup()
+    }
+    return op(...args)
+  } else {
+    return block_operation(op, "Operation not permitted")
   }
 }
 ```
