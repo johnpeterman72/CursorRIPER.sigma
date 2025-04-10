@@ -49,9 +49,9 @@ Create or update `.cursor/mcp.json` in your project:
 }
 ```
 
-### 3. Enable MCP Services
+### 3. Enable MCP Services (NOTE: CURRENTLY ONLY FILE SYSTEM IS WORKING)
 
-Edit `CursorRIPER.sigma.mcp.mdc` and uncomment the services you want to use:
+Edit `RIPERsigma.mcp.mdc` and uncomment the services you want to use:
 
 ```markdown
 ## 📁 Filesystem Services
@@ -164,7 +164,7 @@ If you see path-related errors:
 
 ## 📚 Additional MCP Services
 
-The MCP integration can be extended with other services by uncommenting them in `CursorRIPER.sigma.mcp.mdc`:
+The MCP integration can be extended with other services by uncommenting them in `RIPERsigma.mcp.mdc`:
 
 ```markdown
 ## 🔍 Web Search Services
@@ -180,7 +180,7 @@ Each service has its own symbolic notation, permissions, and commands.
 
 The MCP integration follows a modular approach:
 
-1. **Master Configuration**: `CursorRIPER.sigma.mcp.mdc` controls which services are enabled
+1. **Master Configuration**: `RIPERsigma.mcp.mdc` controls which services are enabled
 2. **Service Modules**: Individual `.mdc` files in `.cursor/rules/` implement each service
 3. **MCP Server Config**: `.cursor/mcp.json` configures the MCP servers
 
@@ -193,5 +193,5 @@ This architecture ensures that:
 ## 🔖 References
 
 - [Model Context Protocol Documentation](https://modelcontextprotocol.github.io/)
-- [CursorRIPER♦Σ Symbols Reference](./symbols.md)
+- [CursorRIPER♦Σ Symbols Reference](./symbol-reference-guide.md)
 - [MCP Filesystem Server Documentation](https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem)
