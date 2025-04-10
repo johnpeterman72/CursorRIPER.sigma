@@ -3,6 +3,25 @@
 
 ## 🛡️ Protection Shorthand Commands
 
+### KNOWN BUG WORK-AROUND
+
+In Cursor version .48.8 Shorthand commands defined in project rules (.mdc files) are not being recognized when used directly in the Cmd+K prompt, even when the rules have alwaysApply: true set.
+
+### WORKAROUNDS
+
+ - Working method #1: Select code → @Rules → select rule file → type shorthand command
+ - Working method #2: Add just the shorthand command descriptions to global rules in Settings in Cursor
+
+```
+# Code Protection Shorthand Commands
+!cp - Add PROTECTED comment
+!cg - Add GUARDED comment  
+!ci - Add INFO comment
+!cd - Add DEBUG comment
+!ct - Add TEST comment
+!cc - Add CRITICAL comment
+```
+
 When using Command-K in the code editor, type:
 
 | Shorthand | Expands To            | Protection Level |
