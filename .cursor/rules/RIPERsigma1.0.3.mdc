@@ -339,7 +339,7 @@ START_process = {
 ## 🔐 Permission Commands
 
 Φ_permission_commands = {
-  !cp = show_current_permissions(),                           // Check permissions for current mode
+  !ckp = show_current_permissions(),                           // Check permissions for current mode
   !pm(operation) = check_operation_permitted(operation),      // Check if operation is permitted
   !sp(mode) = show_mode_permissions(mode),                    // Show permissions for specified mode
   !vm(operation) = suggest_appropriate_mode(operation)        // Verify mode appropriate for operation
