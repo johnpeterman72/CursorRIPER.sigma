@@ -1,0 +1,170 @@
+---
+description: MCP Filesystem integration for CursorRIPER Σ
+globs: 
+alwaysApply: true
+---
+
+# CursorRIPER♦Σ Filesystem MCP Integration
+
+## 📁 MCP Filesystem Operations
+
+Φ_fs = {
+  read(path) = mcp_call("read_file", {path}),
+  read_multi(paths) = mcp_call("read_multiple_files", {paths}),
+  write(path, content) = mcp_call("write_file", {path, content}),
+  edit(path, edits, dry_run = false) = mcp_call("edit_file", {path, edits, dryRun: dry_run}),
+  create_dir(path) = mcp_call("create_directory", {path}),
+  list(path) = mcp_call("list_directory", {path}),
+  tree(path) = mcp_call("directory_tree", {path}),
+  move(source, dest) = mcp_call("move_file", {source, destination: dest}),
+  search(path, pattern, exclude = []) = mcp_call("search_files", {path, pattern, excludePatterns: exclude}),
+  info(path) = mcp_call("get_file_info", {path}),
+  allowed() = mcp_call("list_allowed_directories", {})
+}
+
+## 🔌 Mode-Specific Filesystem Operations
+
+MΦ = {
+  Ω₁: Φ_fs[read, read_multi, list, tree, search, info, allowed], // Research
+  Ω₂: Φ_fs[read, list, tree, search, info, allowed],             // Innovate
+  Ω₃: Φ_fs[read, list, search, info, create_dir, allowed],       // Plan
+  Ω₄: Φ_fs[read, write, edit, create_dir, move, allowed],        // Execute
+  Ω₅: Φ_fs[read, read_multi, list, tree, search, info, allowed]  // Review
+}
+
+## 🔒 Filesystem Permission Matrix
+
+ℙΦ = {
+  Ω₁: {read: ✓, create: ✗, update: ✗, delete: ✗},  // Research
+  Ω₂: {read: ✓, create: ~, update: ✗, delete: ✗},  // Innovate
+  Ω₃: {read: ✓, create: ✓, update: ~, delete: ✗},  // Plan
+  Ω₄: {read: ✓, create: ✓, update: ✓, delete: ~},  // Execute
+  Ω₅: {read: ✓, create: ✗, update: ✗, delete: ✗}   // Review
+}
+
+## 🔍 Filesystem Operation Categories
+
+𝕆fs_read = {read, read_multi, list, tree, search, info, allowed}
+𝕆fs_create = {write, create_dir}
+𝕆fs_update = {edit, move}
+𝕆fs_delete = {delete} // Not directly exposed in basic MCP
+
+## 📡 Filesystem Context Integration
+
+// Add Filesystem to Context References
+Γ₉ = 🗃️ @Filesystem
+
+// Update Mode-Context Mapping to include Filesystem
+MΓ_fs = {
+  Ω₁: MΓ[Ω₁] + [Γ₉],  // Add to Research
+  Ω₂: MΓ[Ω₂],         // Innovate unchanged
+  Ω₃: MΓ[Ω₃] + [Γ₉],  // Add to Plan
+  Ω₄: MΓ[Ω₄] + [Γ₉],  // Add to Execute
+  Ω₅: MΓ[Ω₅] + [Γ₉]   // Add to Review
+}
+
+// Context-Filesystem Reference Types
+ΓΦ = {
+  fs_path: "@path",      // Reference to file path
+  fs_dir: "@dir",        // Reference to directory
+  fs_pattern: "@pattern" // Reference to search pattern
+}
+
+## 🛡️ Filesystem Protection Integration
+
+// Protection Levels for Filesystem Operations
+ΨΦ = {
+  ψ₁: {desc: "Public", ops: Φ_fs[*]},
+  ψ₂: {desc: "Visible", ops: Φ_fs[read, list, search, info]},
+  ψ₃: {desc: "Limited", ops: Φ_fs[read, info]},
+  ψ₄: {desc: "Private", ops: Φ_fs[info]},
+  ψ₅: {desc: "Restricted", ops: {}},
+  ψ₆: {desc: "Forbidden", ops: {}}
+}
+
+// Directory Protection Mapping Function
+ΨD(path) ⟶ protection_level
+
+// Verify Protection Level Before Operation
+verify_fs_protection(op, path) = {
+  path_protection = ΨD(path),
+  op ∈ ΨΦ[path_protection].ops ? allow(op) : block(op)
+}
+
+## 🔍 MCP Command Shortcuts
+
+SΦ = {
+  "!fr": Φ_fs.read,             // file read
+  "!fm": Φ_fs.read_multi,       // file multi-read
+  "!fw": Φ_fs.write,            // file write
+  "!fe": Φ_fs.edit,             // file edit
+  "!fc": Φ_fs.create_dir,       // file create-dir
+  "!fl": Φ_fs.list,             // file list
+  "!ft": Φ_fs.tree,             // file tree
+  "!fv": Φ_fs.move,             // file move
+  "!fs": Φ_fs.search,           // file search
+  "!fi": Φ_fs.info,             // file info
+  "!fa": Φ_fs.allowed           // file allowed
+}
+
+// Add Filesystem Context Command
+Φ_context_commands.!afs = (path) ⟶ Σ_context.add_reference(Γ₉, path)  // Add filesystem reference
+
+## 💾 Filesystem Memory Integration
+
+Σ_fs = {
+  σfs₁ = fs_paths ⟶ recently_accessed_paths,
+  σfs₂ = fs_operations ⟶ operation_history,
+  σfs₃ = fs_errors ⟶ error_history,
+  σfs₄ = fs_success ⟶ success_history
+}
+
+// Memory Update for Filesystem Operations
+Σ_update_fs(op, result) = {
+  update(σfs₁, op.path),
+  update(σfs₂, {op: op, timestamp: now()}),
+  result.success ? update(σfs₄, result) : update(σfs₃, result)
+}
+
+## ⚠️ Filesystem Safety Protocols
+
+// Filesystem validation function
+Υ_fs = {
+  validate_path(path) = path_exists(path) ∧ path ∈ Φ_fs.allowed(),
+  validate_content(content) = content_safe(content) ∧ content_size_valid(content),
+  validate_operation(op, Ω) = op ∈ MΦ(Ω) ∧ Ξfs(op, Ω) ∧ verify_fs_protection(op, path)
+}
+
+// Validate and execute filesystem operation
+execute_fs_op(op, ...args) = {
+  if (!has_mcp_filesystem()) {
+    return report_error("MCP Filesystem not available. Please install @modelcontextprotocol/server-filesystem.")
+  }
+  
+  if (Υ_fs.validate_operation(op, current_mode)) {
+    if (is_destructive(op)) {
+      warn("This operation will modify files") ∧ confirm ∧ Σ_backup.create_backup()
+    }
+    return op(...args)
+  } else {
+    return block_operation(op, "Filesystem operation not permitted in current mode")
+  }
+}
+
+// Feature detection for MCP Filesystem
+has_mcp_filesystem() = {
+  try {
+    return Φ_fs.allowed() !== undefined
+  } catch {
+    return false
+  }
+}
+
+// New safety protocol for filesystem operations
+Δ₇ = fs_destructive_op(op) ⟶ warn ∧ confirm ∧ Σ_backup.create_backup() ∧ op
+
+## 🔗 Extended Cross-References
+
+// Add filesystem references to cross-reference system
+χ_refs.filesystem = "[Γ₉:path/to/file.js]"  // Filesystem reference
+χ_refs.filesystem_op = "[Φ_fs.read:path/to/file.js]"  // Filesystem operation reference
