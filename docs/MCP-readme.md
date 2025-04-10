@@ -49,7 +49,7 @@ Create or update `.cursor/mcp.json` in your project:
 }
 ```
 
-### 3. Enable MCP Services (NOTE: CURRENTLY ONLY FILE SYSTEM IS WORKING)
+### 3. Enable MCP Services (NOTE: CURRENTLY ONLY FILE SYSTEM IS WORKING & YOU CAN SKIP THIS STEP UNTIL OTHER ONES ARE BUILT OUT)
 
 Edit `RIPERsigma.mcp.mdc` and uncomment the services you want to use:
 
