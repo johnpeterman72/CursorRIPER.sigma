@@ -2,35 +2,37 @@
 # CursorRIPER♦Σ (Sigma)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![Version](https://img.shields.io/badge/version-1.0.1-green)
+![Version](https://img.shields.io/badge/version-1.0.3-green)
 
-> A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection capabilities.
+> A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, and permission management capabilities.
 
 ## 📚 Overview
 
-CursorRIPER♦Σ is a highly optimized, symbolic implementation of the  [CursorRIPER framework](https://github.com/johnpeterman72/CursorRIPER) designed to enhance AI-assisted software development. It uses a symbolic notation system with mathematical operators, emojis, and Greek letters to compress complex development workflows into a minimal, yet comprehensive, token-friendly footprint.
+CursorRIPER♦Σ is a highly optimized, symbolic implementation of the [CursorRIPER framework](https://github.com/johnpeterman72/CursorRIPER) designed to enhance AI-assisted software development. It uses a symbolic notation system with mathematical operators, emojis, and Greek letters to compress complex development workflows into a minimal, yet comprehensive, token footprint.
 
 The framework reduces ~15,000 words of instructions to under 1,000 while preserving full functionality, making it dramatically more efficient for AI token usage. The idea came from [Tof](https://forum.cursor.com/t/user-rules-with-memory-errors-tracking-rules-generation/68321)
 
 ## 🌟 Key Features
 
-- **Symbolic Notation**: Uses Greek letters (Ω, Π, Σ, Δ), subscripts, and emoji for extreme conciseness
+- **Symbolic Notation**: Uses Greek letters (Ω, Π, Σ, Δ, Γ, ℙ), subscripts, and emoji for extreme conciseness
 - **RIPER Workflow Modes**: Research, Innovate, Plan, Execute, Review (🔍R, 💡I, 📝P, ⚙️E, 🔎RV)
 - **Structured Memory System**: Standardized file templates with cross-referencing
 - **Phase-based Project Management**: Tracks project progress from initialization to maintenance
 - **Automatic Memory**: Creates and maintains a structured memory bank for project context
 - **Code Protection System**: Protects critical code sections with intelligent comment annotations
+- **Context Reference System**: Manages and tracks file, code, and document references
+- **Permission System**: Enforces mode-specific CRUD operations and handles violations
 
 ## 🧠 Framework Structure
 
 ### Modes (Ω)
 
 ```
-Ω₁ = 🔍R ⟶ Research: Gather information and document findings
-Ω₂ = 💡I ⟶ Innovate: Explore options and suggest ideas
-Ω₃ = 📝P ⟶ Plan: Create specifications and sequence steps
-Ω₄ = ⚙️E ⟶ Execute: Implement code according to plan
-Ω₅ = 🔎RV ⟶ Review: Validate output against requirements
+Ω₁ = 🔍R ⟶ ℙ(Ω₁) ⟶ Research: Gather information and document findings
+Ω₂ = 💡I ⟶ ℙ(Ω₂) ⟶ Innovate: Explore options and suggest ideas
+Ω₃ = 📝P ⟶ ℙ(Ω₃) ⟶ Plan: Create specifications and sequence steps
+Ω₄ = ⚙️E ⟶ ℙ(Ω₄) ⟶ Execute: Implement code according to plan
+Ω₅ = 🔎RV ⟶ ℙ(Ω₅) ⟶ Review: Validate output against requirements
 ```
 
 ### Phases (Π)
@@ -48,9 +50,9 @@ The framework reduces ~15,000 words of instructions to under 1,000 while preserv
 σ₁ = 📋projectbrief.md ⟶ Requirements, scope, criteria
 σ₂ = 🏛️systemPatterns.md ⟶ Architecture, components, decisions
 σ₃ = 💻techContext.md ⟶ Stack, environment, dependencies
-σ₄ = 🔮activeContext.md ⟶ Focus, changes, next steps
+σ₄ = 🔮activeContext.md ⟶ Focus, changes, next steps, context references
 σ₅ = 📊progress.md ⟶ Status, milestones, issues
-σ₆ = 🛡️protection.md ⟶ Protected regions, history, approvals
+σ₆ = 🛡️protection.md ⟶ Protected regions, history, approvals, violations
 ```
 
 ### Protection Levels (Ψ)
@@ -62,6 +64,31 @@ The framework reduces ~15,000 words of instructions to under 1,000 while preserv
 Ψ₄ = DEBUG ⟶ Debugging code
 Ψ₅ = TEST ⟶ Testing code
 Ψ₆ = CRITICAL ⟶ Business logic, highest protection
+```
+
+### Context References (Γ)
+
+```
+Γ₁ = 📄 @Files ⟶ File references
+Γ₂ = 📁 @Folders ⟶ Folder references
+Γ₃ = 💻 @Code ⟶ Code references
+Γ₄ = 📚 @Docs ⟶ Documentation references
+Γ₅ = 📏 @Rules ⟶ Cursor rules references
+Γ₆ = 🔄 @Git ⟶ Git history references
+Γ₇ = 📝 @Notepads ⟶ Notepad references
+Γ₈ = 📌 #Files ⟶ Pinned file references
+```
+
+### Permission Matrix (ℙ)
+
+```
+ℙ = {C: create, R: read, U: update, D: delete}
+
+ℙ(Ω₁) = {R: ✓, C: ✗, U: ✗, D: ✗} // Research mode
+ℙ(Ω₂) = {R: ✓, C: ~, U: ✗, D: ✗} // Innovate mode (~: conceptual only)
+ℙ(Ω₃) = {R: ✓, C: ✓, U: ~, D: ✗} // Plan mode (~: plan changes only)
+ℙ(Ω₄) = {R: ✓, C: ✓, U: ✓, D: ~} // Execute mode (~: limited scope)
+ℙ(Ω₅) = {R: ✓, C: ✗, U: ✗, D: ✗} // Review mode
 ```
 
 ## 🚀 Getting Started
@@ -76,7 +103,7 @@ mkdir -p /memory-bank/backups
 
 2. Copy the CursorRIPER♦Σ framework `.mdc` files to your project rules folder: `.cursor/rules/`
 
-4. Initialize the framework with the AI assistant:
+3. Initialize the framework with the AI assistant:
 
 ```
 /start
@@ -101,9 +128,9 @@ The framework automatically maintains six key memory files:
 1. **Project Brief** (σ₁): Defines requirements, success criteria, and scope
 2. **System Patterns** (σ₂): Captures architecture, components, and design decisions
 3. **Technical Context** (σ₃): Records technology stack, environment, and dependencies
-4. **Active Context** (σ₄): Tracks current focus, recent changes, and next steps
+4. **Active Context** (σ₄): Tracks current focus, recent changes, next steps, and context references
 5. **Progress Tracker** (σ₅): Monitors project status, features, issues, and milestones
-6. **Protection Registry** (σ₆): Tracks protected code regions, history, and approvals
+6. **Protection Registry** (σ₆): Tracks protected code regions, history, approvals, and permission violations
 
 ## 🛡️ Code Protection System
 
@@ -133,6 +160,64 @@ Add code protection with shorthand commands:
 
 See [Protection Commands](./docs/ProtectionCommands.md) for full documentation.
 
+## 📎 Context Reference System
+
+The context reference system allows tracking and managing important files, code, and documents:
+
+### Context Types
+
+- **@Files**: Important files in the project
+- **@Folders**: Relevant directories or folder structures
+- **@Code**: Code sections, functions, or classes
+- **@Docs**: Documentation or specification references
+- **@Rules**: Cursor project rules references
+- **@Git**: Git history or commit references
+- **@Notepads**: Notepad content references
+- **#Files**: Pinned file references
+
+### Context Commands
+
+Manage context references with shorthand commands:
+
+```
+!af - Add file reference
+!ad - Add directory reference
+!ac - Add code reference
+!adoc - Add documentation reference
+!ar - Add rules reference
+!ag - Add git reference
+!an - Add notepad reference
+!pf - Pin file to context
+```
+
+See [Context Usage Guide](./docs/howto_context.md) for more details.
+
+## 🔐 Permission System
+
+The permission system enforces appropriate operations for each mode and handles violations:
+
+### Permission Matrix
+
+Each mode has a specific set of allowed CRUD operations:
+- **Research Mode**: Read only
+- **Innovate Mode**: Read and conceptual creation
+- **Plan Mode**: Read, create, and plan updates
+- **Execute Mode**: Read, create, update, and limited deletion
+- **Review Mode**: Read only
+
+### Permission Commands
+
+Check and verify permissions with shorthand commands:
+
+```
+!cp - Check permissions for current mode
+!pm - Check if operation is permitted
+!sp - Show permissions for specified mode
+!vm - Verify mode appropriate for operation
+```
+
+See [Permission Reference](./docs/cheatsheets/permission_reference.md) for quick reference.
+
 ## ⚠️ Safety Features
 
 - Automatic backups before destructive operations
@@ -140,6 +225,8 @@ See [Protection Commands](./docs/ProtectionCommands.md) for full documentation.
 - Phase transition verification
 - Error recovery suggestions
 - Code protection system with mode-aware behavior
+- Permission violation detection and recovery
+- Context tracking with status indicators
 
 ## 🔣 Symbol Reference
 
@@ -155,4 +242,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-*CursorRIPER♦Σ: Symbolic efficiency for AI-assisted development with intelligent code protection.*
+*CursorRIPER♦Σ: Symbolic efficiency for AI-assisted development with intelligent code protection, context awareness, and permission enforcement.*
