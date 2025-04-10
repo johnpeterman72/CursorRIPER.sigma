@@ -232,7 +232,7 @@ See [Permission Reference](./docs/cheatsheets/permission_reference.md) for quick
 
 ## 🔣 Symbol Reference
 
-See the [Symbol Reference Guide](./docs/symbols.md) for a complete list of symbols and notation used in the framework.
+See the [Symbol Reference Guide](./docs/symbol-reference-guide.md) for a complete list of symbols and notation used in the framework.
 
 ## 🤝 Contributing
 
