@@ -6,6 +6,8 @@
 
 > A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, and permission management capabilities.
 
+Current version: [RIPERsigma1.0.3.mdc](.cursor/rules/RIPERsigma1.0.3.mdc)
+
 ## 📚 Overview
 
 CursorRIPER♦Σ is a highly optimized, symbolic implementation of the [CursorRIPER framework](https://github.com/johnpeterman72/CursorRIPER) designed to enhance AI-assisted software development. It uses a symbolic notation system with mathematical operators, emojis, and Greek letters to compress complex development workflows into a minimal, yet comprehensive, token footprint.
