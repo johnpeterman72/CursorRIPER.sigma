@@ -1,3 +1,4 @@
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # CursorRIPER.sigma User Guide
 *Adding the CursorRIPER.sigma Framework to Existing Projects*
 
