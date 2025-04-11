@@ -1,3 +1,4 @@
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # 📝 Changelog
 *Updated: 2025-04-10*
 
