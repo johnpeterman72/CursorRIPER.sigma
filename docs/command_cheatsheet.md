@@ -1,3 +1,4 @@
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # 📑 CursorRIPER Σ Command Cheatsheet
 
 *v1.0 | Last Updated: 2025-04-11*
