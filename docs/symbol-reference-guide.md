@@ -1,3 +1,4 @@
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # 🔣 CursorRIPER Σ Comprehensive Symbol Reference Guide
 *v2.1 | Created: 2025-04-10 | Updated: 2025-04-10*
 
