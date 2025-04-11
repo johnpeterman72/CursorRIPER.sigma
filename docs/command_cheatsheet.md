@@ -22,14 +22,12 @@ Control code protection levels using these commands:
 
 | Command | Description | Protection Level |
 |---------|-------------|------------------|
-| `!cp`   | Set code to PUBLIC status | ψ₁ (Public) |
-| `!cv`   | Set code to VISIBLE status | ψ₂ (Visible) |
-| `!cl`   | Set code to LIMITED status | ψ₃ (Limited) |
-| `!cpr`  | Set code to PRIVATE status | ψ₄ (Private) |
-| `!cr`   | Set code to RESTRICTED status | ψ₅ (Restricted) |
-| `!cf`   | Set code to FORBIDDEN status | ψ₆ (Forbidden) |
-| `!cg`   | Get current protection status | - |
-| `!cs`   | Set custom protection level | - |
+| `!cp`   | Set code to PROTECTED status | PROTECTED - DO NOT MODIFY |
+| `!cg`   | Set code to GUARDED status | GUARDED - ASK BEFORE MODIFYING |
+| `!ci`   | Set code to INFO status | INFO - CONTEXT NOTE |
+| `!cd`   | Set code to DEBUG status | DEBUG - DEBUGGING CODE |
+| `!ct`   | Set code to TEST status | TEST - TESTING CODE |
+| `!cc`   | Set code to CRITICAL status | CRITICAL - BUSINESS LOGIC |
 
 ## 👁️ Context System Commands
 
