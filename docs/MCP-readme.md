@@ -1,3 +1,4 @@
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # MCP Integration for CursorRIPER♦Σ
 
 ## 📚 Overview
