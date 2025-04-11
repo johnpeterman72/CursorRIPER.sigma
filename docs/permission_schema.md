@@ -1,3 +1,4 @@
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # 🔐 CRUD Permission Schema
 *v1.0 | Created: 2025-04-10*
 
