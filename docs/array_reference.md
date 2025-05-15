@@ -1,3 +1,4 @@
+![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # CursorRIPER♦Σ 1.0.4 Array Reference
 
 This document provides a comprehensive reference for all arrays used in the CursorRIPER♦Σ 1.0.4 framework. Arrays are fundamental organizing structures that help categorize, map, and relate different elements of the framework.
