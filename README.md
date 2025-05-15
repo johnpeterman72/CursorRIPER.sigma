@@ -2,11 +2,13 @@
 # CursorRIPER♦Σ (Sigma)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![Version](https://img.shields.io/badge/version-1.0.3-green)
+![Version](https://img.shields.io/badge/version-1.0.4-green)
 
 > A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, and permission management capabilities.
 
-Current version: [RIPERsigma1.0.3.mdc](.cursor/rules/RIPERsigma1.0.3.mdc)
+Current version: [RIPERsigma1.0.4.mdc](.cursor/rules/RIPERsigma1.0.4.mdc)
+
+Try out [CursorRIPER.sigma-lite](https://github.com/johnpeterman72/CursorRIPER.sigma-lite), a Lite version without context references, permissions, or code protection.
 
 ## 📚 Overview
 
