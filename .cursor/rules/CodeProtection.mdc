@@ -1,10 +1,10 @@
 ---
-description: Code protection rules and behaviors
-globs: **/*.*
+description: 
+globs: 
 alwaysApply: true
 ---
 
-# CursorRIPER♦Ψ 1.0.0
+# CursorRIPER♦Ψ 1.0.1
 
 ## 🛡️ Protection Syntax
 
@@ -14,7 +14,15 @@ alwaysApply: true
   INFO: "INFO - CONTEXT NOTE",
   DEBUG: "DEBUG - DEBUGGING CODE",
   TEST: "TEST - TESTING CODE",
-  CRITICAL: "CRITICAL - BUSINESS LOGIC"
+  CRITICAL: "CRITICAL - BUSINESS LOGIC",
+  
+  // End markers
+  END_PROTECTED: "END-P - PROTECTED REGION END",
+  END_GUARDED: "END-G - GUARDED REGION END",
+  END_INFO: "END-I - INFO REGION END",
+  END_DEBUG: "END-D - DEBUG REGION END",
+  END_TEST: "END-T - TEST REGION END",
+  END_CRITICAL: "END-C - CRITICAL REGION END"
 }
 
 ## 💬 Language Comment Formats
@@ -60,8 +68,17 @@ alwaysApply: true
 apply_protection(type) = {
   detect_language(current_file) ⟶ lang,
   get_comment_syntax(lang) ⟶ {prefix, suffix},
-  insert(prefix + Ψ_syntax[type] + suffix),
-  update(σ₆.protected_regions)
+  selection = get_editor_selection(),
+  
+  // Insert opening marker
+  insert_at_selection_start(prefix + Ψ_syntax[type] + suffix),
+  
+  // Insert end marker
+  end_marker = Ψ_syntax["END_" + type],
+  insert_at_selection_end(prefix + end_marker + suffix),
+  
+  // Update protection registry
+  Ψ_manage.add(current_file, selection.start_line, selection.end_line, type, "User-added protection")
 }
 
 ## 🔄 Protection Behaviors
@@ -129,14 +146,45 @@ apply_protection(type) = {
     segments = parse(code, lang),
     analysis = []
     
+    // Track open markers and match with end markers
+    open_markers = []
+    
     for segment in segments:
-      pattern_matches = match_patterns(segment, Ψ_scan.patterns)
-      if pattern_matches:
-        analysis.push({
-          segment: segment,
-          matches: pattern_matches,
-          suggested_level: determine_level(pattern_matches)
+      // Check if this is an end marker
+      end_marker_match = match_end_marker(segment)
+      if end_marker_match:
+        if open_markers.length > 0:
+          // Close the most recent matching open marker
+          close_marker(open_markers, end_marker_match, analysis)
+        continue
+        
+      // Check if this is an opening marker
+      marker_type = match_protection_marker(segment)
+      if marker_type:
+        open_markers.push({
+          type: marker_type,
+          line: segment.line_number,
+          content: segment
         })
+        continue
+      
+      // Regular code segment - check patterns if not in a marker
+      if open_markers.length == 0:
+        pattern_matches = match_patterns(segment, Ψ_scan.patterns)
+        if pattern_matches:
+          analysis.push({
+            segment: segment,
+            matches: pattern_matches,
+            suggested_level: determine_level(pattern_matches)
+          })
+    
+    // Report any unclosed markers
+    for marker in open_markers:
+      analysis.push({
+        segment: marker.content,
+        warning: "Unclosed protection marker",
+        suggested_action: "Add appropriate end marker"
+      })
     
     return analysis
   },
@@ -150,6 +198,34 @@ apply_protection(type) = {
       return "GUARDED"
     else:
       return "INFO"
+  },
+  
+  match_end_marker(segment) = {
+    for type in [PROTECTED, GUARDED, INFO, DEBUG, TEST, CRITICAL]:
+      end_marker = "END-" + type.substr(0,1)
+      if segment.includes(end_marker):
+        return type
+    return null
+  },
+  
+  close_marker(open_markers, end_type, analysis) = {
+    // Find matching open marker
+    matched_idx = -1
+    for i = open_markers.length - 1; i >= 0; i--:
+      if open_markers[i].type === end_type:
+        matched_idx = i
+        break
+        
+    if matched_idx >= 0:
+      // Remove the marker from the open list
+      marker = open_markers.splice(matched_idx, 1)[0]
+      // Process the protection block if needed
+      // (no analysis needed for properly marked protection blocks)
+    else:
+      analysis.push({
+        warning: "Unmatched end marker for " + end_type,
+        suggested_action: "Add appropriate start marker"
+      })
   }
 }
 
@@ -224,16 +300,26 @@ add_protection_to_selection(level) = {
   file = get_current_file(),
   lang = detect_language(file),
   syntax = Ψ_language_syntax[lang],
-  comment = syntax.prefix + Ψ_syntax[level] + syntax.suffix,
-  insert_at_selection_start(comment),
-  Ψ_manage.add(file, selection.start, selection.end, level, "User-added protection")
+  
+  // Add start marker
+  start_comment = syntax.prefix + Ψ_syntax[level] + syntax.suffix,
+  insert_at_selection_start(start_comment),
+  
+  // Add end marker
+  end_comment = syntax.prefix + Ψ_syntax["END_" + level] + syntax.suffix,
+  insert_at_selection_end(end_comment),
+  
+  // Register the protected region
+  Ψ_manage.add(file, selection.start_line, selection.end_line, level, "User-added protection")
 }
 
 remove_protection_with_confirmation(region_id) = {
   region = find_region_by_id(region_id),
   confirm("Are you sure you want to remove protection from this code?"),
   if confirmed:
+    // Remove both the start and end markers
     remove_protection_comment(region.file, region.start_line),
+    remove_protection_comment(region.file, region.end_line),
     remove_from_registry(region_id)
 }
 
