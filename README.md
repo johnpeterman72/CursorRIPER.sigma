@@ -267,7 +267,7 @@ See the [Symbol Reference Guide](./docs/symbol-reference-guide.md) (v3.0) for a 
 - [BMAD Integration Guide](./docs/bmad_integration_guide.md) - Enterprise adoption
 - [Integration Tests](./docs/integration_tests.md) - Test scenarios and examples
 - [MCP Setup Guides](./docs/mcp/) - Individual service setup instructions
-- [Changelog](./docs/CHANGELOG.md) - Detailed version history
+- [Changelog](https://github.com/johnpeterman72/CursorRIPER.sigma/blob/main/docs/changelog.md) - Detailed version history
 
 ## 🤝 Contributing
 
