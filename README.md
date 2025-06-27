@@ -12,7 +12,7 @@ Try out [CursorRIPER.sigma-lite](https://github.com/johnpeterman72/CursorRIPER.s
 
 ## 📚 Overview
 
-CursorRIPER♦Σ is a highly optimized, symbolic implementation of the [CursorRIPER framework](https://github.com/johnpeterman72/CursorRIPER) designed to enhance AI-assisted software development. It uses a symbolic notation system with mathematical operators, emojis, and Greek letters to compress complex development workflows into a minimal, yet comprehensive, token footprint.
+CursorRIPER♦Σ is a highly optimized, symbolic implementation of the [CursorRIPER framework](https://github.com/johnpeterman72/CursorRIPER) designed to enhance AI-assisted software development. It utilizes a symbolic notation system that incorporates mathematical operators, emojis, and Greek letters to compress complex development workflows into a compact yet comprehensive token footprint.
 
 The framework reduces ~15,000 words of instructions to under 1,000 while preserving full functionality, making it dramatically more efficient for AI token usage. The idea came from [Tof](https://forum.cursor.com/t/user-rules-with-memory-errors-tracking-rules-generation/68321)
 
@@ -128,11 +128,11 @@ mkdir -p /memory-bank/backups
 
 ### Optional: Enable MCP Services
 
-See [Quick Start Guide](./docs/quickstart.md) for enabling GitHub, Web Search, Browser Automation, and Docker integrations.
+See the [Quick Start Guide](./docs/quickstart.md) for instructions on enabling GitHub, Web Search, Browser Automation, and Docker integrations.
 
 ### Optional: Enable BMAD Enterprise
 
-See [BMAD Integration Guide](./docs/bmad_integration_guide.md) for adopting enterprise features like roles, PRDs, and quality gates.
+See the [BMAD Integration Guide](./docs/bmad_integration_guide.md) for adopting enterprise features, such as roles, PRDs, and quality gates.
 
 ### Usage
 
@@ -183,7 +183,7 @@ Add code protection with shorthand commands:
 !cc - Add CRITICAL comment
 ```
 
-See [Protection Commands](./docs/ProtectionCommands.md) for full documentation.
+See [Protection Commands](./docs/ProtectionCommands.md) for complete documentation.
 
 ## 📎 Context Reference System
 
@@ -267,7 +267,7 @@ See the [Symbol Reference Guide](./docs/symbol-reference-guide.md) (v3.0) for a 
 - [BMAD Integration Guide](./docs/bmad_integration_guide.md) - Enterprise adoption
 - [Integration Tests](./docs/integration_tests.md) - Test scenarios and examples
 - [MCP Setup Guides](./docs/mcp/) - Individual service setup instructions
-- [Changelog](./CHANGELOG.md) - Detailed version history
+- [Changelog](./docs/CHANGELOG.md) - Detailed version history
 
 ## 🤝 Contributing
 
