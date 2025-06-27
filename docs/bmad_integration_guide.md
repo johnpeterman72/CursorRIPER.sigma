@@ -337,4 +337,4 @@ If BMAD doesn't fit your team:
 4. No framework damage - fully reversible
 
 ---
-*BMAD Integration Guide v1.0 | Framework v1.0.4*
+*BMAD Integration Guide v1.0 | Framework v1.0.5*
