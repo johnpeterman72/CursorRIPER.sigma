@@ -17,7 +17,7 @@
 ### Step 2: Enable Core Framework
 1. Open Cursor IDE
 2. Go to Settings → Cursor Rules
-3. Enable `RIPERsigma1.0.4.mdc`
+3. Enable `RIPERsigma1.0.5.mdc`
 
 ### Step 3: Initialize Memory Bank
 ```
@@ -134,7 +134,7 @@ function importantFunction() {
 
 ### "Operation not permitted"
 - Check current mode with `[MODE: X]` 
-- Switch to appropriate mode
+- Switch to the appropriate mode
 - EXECUTE mode has most permissions
 
 ### "MCP service not available"
@@ -149,7 +149,7 @@ function importantFunction() {
 
 ## 💡 Pro Tips
 
-1. **Start Simple**: Use core framework first, add MCP/BMAD later
+1. **Start Simple**: Use the core framework first, add MCP/BMAD later
 2. **Mode Discipline**: Let modes guide your workflow
 3. **Protection Markers**: Use them for critical code
 4. **Context Awareness**: Keep context focused and relevant
@@ -157,11 +157,11 @@ function importantFunction() {
 
 ## 🎓 Next Steps
 
-1. Read full documentation in `/docs/`
-2. Review symbol reference guide
+1. Read complete documentation in `/docs/`
+2. Review the symbol reference guide
 3. Try a simple project with RIPER modes
 4. Enable MCP services one at a time
 5. Consider BMAD for team projects
 
 ---
-*Framework Version: 1.0.4 | Quick Start v1.0*
+*Framework Version: 1.0.5 | Quick Start v1.0*
