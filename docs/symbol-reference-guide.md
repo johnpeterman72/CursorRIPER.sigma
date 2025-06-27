@@ -1,6 +1,12 @@
 ![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # 🔣 CursorRIPER Σ Comprehensive Symbol Reference Guide
-*v2.1 | Created: 2025-04-10 | Updated: 2025-04-10*
+*v3.0 | Created: 2025-04-10 | Updated: 2025-04-26*
+
+## 🆕 What's New in v3.0
+- Added MCP service integrations: GitHub (Θ), Web Search (Λ), Puppeteer (Υ), Docker (Ξ)
+- Added BMAD-Method integration: Roles (Β), PRD (Ρ), Gates (Κ), Enterprise (Ε)
+- Extended reference map (ℜ) with all new services
+- Added comprehensive command shortcuts for all systems
 
 ## 📁 File Symbols
 
@@ -188,6 +194,104 @@
 | !sp | Show permissions for specified mode |
 | !vm | Verify mode appropriate for operation |
 
+## 🐙 GitHub Commands (SΘ)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !gr | search_repositories | Search GitHub repositories |
+| !gc | create_repository | Create new repository |
+| !gp | push_files | Push files to repository |
+| !gpr | create_pull_request | Create pull request |
+| !gi | create_issue | Create new issue |
+| !gb | create_branch | Create new branch |
+| !gm | merge_pull_request | Merge pull request |
+
+## 🔍 Web Search Commands (SΛ)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !ws | brave_web_search | Search the web |
+| !wl | brave_local_search | Search local businesses |
+| !wf | fetch_url | Fetch URL content |
+| !wc | clear cache | Clear search cache |
+| !wh | show history | Show search history |
+
+## 🎭 Browser Commands (SΥ)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !pn | navigate | Navigate to URL |
+| !ps | screenshot | Take screenshot |
+| !pc | click | Click element |
+| !pf | fill | Fill form field |
+| !pt | start test | Start test recording |
+| !pe | end test | End test recording |
+| !pg | get content | Get page content |
+
+## 🐳 Docker Commands (SΞ)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !dc | create container | Create new container |
+| !dd | deploy compose | Deploy compose stack |
+| !dl | get logs | Get container logs |
+| !dls | list containers | List all containers |
+| !ds | stop container | Stop container |
+| !dr | remove container | Remove container |
+
+## 👥 BMAD Role Commands (S_roles)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !br | switch_role | Switch active role |
+| !bra | show artifacts | Show role artifacts |
+| !brp | show permissions | Show role permissions |
+| !brg | show gates | Show allowed gates |
+| !brh | role history | Show role history |
+| !brs | role suggestions | Suggest role for mode |
+
+## 📄 PRD Commands (S_prd)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !prd | open_active_prd | Open active PRD |
+| !prdn | create_new_prd | Create new PRD |
+| !prda | archive_prd | Archive current PRD |
+| !prds | show_status | Show PRD status |
+| !prdv | validate_prd | Validate PRD components |
+| !prdc | check_complete | Check PRD completeness |
+| !prdh | prd_history | Show PRD history |
+
+## 🚦 Gate Commands (S_gates)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !kg | check_gate | Check current gate |
+| !kga | approve_gate | Approve gate |
+| !kgc | view_checklist | View gate checklist |
+| !kgb | show_blockers | Show gate blockers |
+| !kgh | gate_history | Show gate history |
+| !kgr | request_approval | Request gate approval |
+| !kgs | skip_gate | Skip gate (emergency) |
+
+## 🏢 Enterprise Commands (S_enterprise)
+
+| Command | Function | Description |
+|---------|----------|-------------|
+| !edg | generate_docs | Generate all docs |
+| !edgt | generate_tech | Generate tech docs |
+| !edga | generate_api | Generate API docs |
+| !edgu | generate_user | Generate user guide |
+| !evb | bump_version | Bump version |
+| !evt | create_tag | Create version tag |
+| !evc | view_changelog | View changelog |
+| !ecr | compliance_report | Compliance report |
+| !ecs | compliance_score | Compliance score |
+| !ecg | compliance_gaps | Compliance gaps |
+| !eal | audit_search | Search audit logs |
+| !ear | audit_report | Generate audit report |
+| !eaa | audit_alerts | Configure audit alerts |
+
 ## 📁 Filesystem Commands (SΦ)
 
 | Command | Function | Description |
@@ -224,6 +328,96 @@
 | ψ₄ | Private | info | Metadata only |
 | ψ₅ | Restricted | none | No access |
 | ψ₆ | Forbidden | none | No access, enforced |
+
+## 🐙 GitHub Symbols (Θ)
+
+| Symbol | Description |
+|--------|-------------|
+| Θ | GitHub operations set |
+| Θ_ops | GitHub operation mappings |
+| MΘ | Mode-specific GitHub restrictions |
+| ℙΘ | GitHub permission matrix |
+| SΘ | GitHub command shortcuts |
+
+## 🔍 Web Search Symbols (Λ)
+
+| Symbol | Description |
+|--------|-------------|
+| Λ | Web search operations set |
+| Λ_ops | Search operation mappings |
+| MΛ | Mode-specific search restrictions |
+| ℙΛ | Search permission matrix |
+| SΛ | Search command shortcuts |
+| Γ₁₀ | Search results context |
+| Γ₁₁ | Search history context |
+
+## 🎭 Puppeteer/Playwright Symbols (Υ)
+
+| Symbol | Description |
+|--------|-------------|
+| Υ | Browser automation operations set |
+| Υ_ops | Browser operation mappings |
+| MΥ | Mode-specific browser restrictions |
+| ℙΥ | Browser permission matrix |
+| SΥ | Browser command shortcuts |
+| ΨΥ | Browser protection levels |
+
+## 🐳 Docker Symbols (Ξ)
+
+| Symbol | Description |
+|--------|-------------|
+| Ξ | Container operations set |
+| Ξ_ops | Docker operation mappings |
+| MΞ | Mode-specific Docker restrictions |
+| ℙΞ | Docker permission matrix |
+| SΞ | Docker command shortcuts |
+| ΔΞ | Docker safety protocols |
+
+## 👥 BMAD Role Symbols (Β)
+
+| Symbol | Description |
+|--------|-------------|
+| Β | BMAD role system |
+| Β₁ | Product Owner role |
+| Β₂ | Architect role |
+| Β₃ | Developer role |
+| Β₄ | QA Engineer role |
+| Β₅ | DevOps role |
+| Γ_roles | Role context integration |
+
+## 📄 PRD Symbols (Ρ)
+
+| Symbol | Description |
+|--------|-------------|
+| Ρ | PRD component system |
+| Ρ₁ | Business Objectives |
+| Ρ₂ | Functional Requirements |
+| Ρ₃ | Technical Constraints |
+| Ρ₄ | User Stories |
+| Ρ₅ | Acceptance Criteria |
+| Ρ₆ | Success Metrics |
+| Ρ_state | PRD state management |
+
+## 🚦 Quality Gate Symbols (Κ)
+
+| Symbol | Description |
+|--------|-------------|
+| Κ | Quality gate system |
+| Κ₁ | PRD Approval Gate |
+| Κ₂ | Design Review Gate |
+| Κ₃ | Code Review Gate |
+| Κ₄ | QA Signoff Gate |
+| Κ₅ | Deployment Approval Gate |
+
+## 🏢 Enterprise Symbols (Ε)
+
+| Symbol | Description |
+|--------|-------------|
+| Ε | Enterprise feature system |
+| Ε_docs | Documentation system |
+| Ε_version | Versioning system |
+| Ε_compliance | Compliance system |
+| Ε_audit | Audit system |
 
 ## 🔗 Cross-Reference Notation
 

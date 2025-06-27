@@ -1,121 +1,163 @@
-![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
-# 📝 Changelog
-*Updated: 2025-05-15*
+# 📝 CursorRIPER Σ Changelog
 
-## Version 1.0.4 (2025-05-15)
+## [1.0.4] - 2025-04-26
 
-### 🆕 New Features
+### 🎉 Major Feature Release: MCP Services & BMAD Enterprise
 
-- **Protection End Markers**: Added explicit end markers for protected code regions
-  - New `Ψ₊` array defining end markers for each protection level
-  - End markers follow the pattern "END-X" where X is the first letter of the protection level
-  - Better boundary definition for protected regions makes it clear where protection begins and ends
+#### Added - MCP Service Integrations
 
-- **Reference Map**: Added compact `ℜ` map for more structured extensibility
-  - Maintains small footprint while enabling easier additions to the framework
-  - Currently includes protection references, expandable to other systems
-  - Provides a foundation for future framework extensions
+##### GitHub Integration (Θ)
+- Complete GitHub API integration via MCP
+- Repository, branch, PR, and issue management
+- Mode-specific restrictions (read-only in RESEARCH/REVIEW)
+- Protection levels for critical operations
+- Cross-service integration with Docker (Θ×Ξ)
+- Commands: `!gr`, `!gc`, `!gp`, `!gpr`, `!gi`, `!gb`, `!gm`
 
-### 🔄 Changes
+##### Web Search Integration (Λ)  
+- Brave Search API integration
+- Web and local search capabilities
+- **Critical**: NO SEARCH in EXECUTE mode (maintain focus!)
+- Context tracking with Γ₁₀ (results) and Γ₁₁ (history)
+- Search result caching system
+- Commands: `!ws`, `!wl`, `!wf`, `!wc`, `!wh`
 
-- **Reorganized Framework Structure**: More logical section ordering
-  - Core definitions at the beginning
-  - Related systems grouped together
-  - Operational components after reference systems
+##### Browser Automation (Υ)
+- Puppeteer and Playwright support
+- Test recording and playback
+- Screenshot and scraping capabilities
+- Mode-specific browser restrictions
+- Protection levels for navigation/forms
+- Commands: `!pn`, `!ps`, `!pc`, `!pf`, `!pt`, `!pe`, `!pg`
 
-- **Consolidated Redundant Sections**:
-  - Combined Violation Detection and Response into unified Violation System
-  - Streamlined Safety Protocols to reduce redundancy
+##### Docker Integration (Ξ)
+- Container and compose management
+- Safety protocols for destructive operations
+- Resource limits and deployment workflows
+- Integration with GitHub for CI/CD
+- Commands: `!dc`, `!dd`, `!dl`, `!dls`, `!ds`, `!dr`
 
-- **Enhanced Protection Scanner**:
-  - Updated to detect and validate paired start and end markers
-  - Improved reporting of mismatched or missing markers
+#### Added - BMAD-Method Enterprise Features
+
+##### Role System (Β)
+- 5 professional roles: Product Owner, Architect, Developer, QA, DevOps
+- Role-mode affinity scoring
+- Permission matrices per role
+- Artifact management by role
+- Commands: `!br`, `!bra`, `!brp`, `!brg`, `!brh`, `!brs`
+
+##### PRD System (Ρ)
+- 6 PRD components with validation
+- Memory bank to PRD migration (σ → Ρ)
+- PRD state management (draft → approved → completed)
+- Template system for all components
+- Commands: `!prd`, `!prdn`, `!prda`, `!prds`, `!prdv`, `!prdc`, `!prdh`
+
+##### Quality Gates (Κ)
+- 5 sequential gates: PRD, Design, Code, QA, Deployment
+- Automated checklist generation
+- Blocker tracking and enforcement
+- Approval workflows by role
+- Commands: `!kg`, `!kga`, `!kgc`, `!kgb`, `!kgh`, `!kgr`, `!kgs`
+
+##### Enterprise Features (Ε)
+- Automated documentation generation
+- Semantic versioning system
+- Compliance tracking (ISO, SOC2, GDPR)
+- Comprehensive audit trail
+- Commands: `!edg`, `!evb`, `!ecr`, `!eal`, and more
+
+#### Enhanced
+- Extended Reference Map (ℜ) with all new service symbols
+- Symbol Reference Guide updated to v3.0
+- Added comprehensive command shortcuts for all systems
+- Cross-service integration patterns (Θ×Ξ, Λ×Θ, Υ×Θ)
+- Mode-Role-Gate integration (M×Β×Κ)
+
+#### Added - Documentation
+- `/docs/quickstart.md` - 5-minute setup guide
+- `/docs/bmad_integration_guide.md` - Enterprise adoption guide
+- `/docs/integration_tests.md` - Comprehensive test suite
+- `/docs/mcp/` - Individual service setup guides
+- PRD templates in `/prd/templates/`
+- Gate checklists in `/quality/checklists/`
+
+#### Added - Configuration Files
+- `CursorRIPER.sigma.mcp.mdc` - Master MCP configuration
+- `.cursor/mcp.json` - MCP server definitions
+- `.cursor/bmad.json` - BMAD configuration
+- Modular rule files in `.cursor/rules/`
+
+### 🏗️ Architecture Improvements
+- Maintained modular design - all features optional
+- Graceful degradation when services unavailable
+- Preserved token efficiency with symbolic notation
+- Extended but didn't break existing patterns
 
 ### 🔧 Technical Details
+- 12 new rule files created
+- 15+ documentation files added
+- 100+ new command shortcuts
+- 8 Greek letters assigned to new systems
+- Backward compatible with v1.0.3
 
-- Protection comments now include both start and end markers
-- End markers follow the pattern "END-P", "END-G", etc.
-- Protection regions now have explicit boundaries
-- CodeProtection.mdc updated to version 1.0.1
-- RIPERsigma updated to version 1.0.4
-- Reduced token size through section consolidation while maintaining full functionality
-  
-
-## v1.0.3 (2025-04-10)
-
-### 🚀 New Features
-
-#### 🔐 CRUD Permission System
-- Added explicit CRUD operation permissions per mode
-- Created permission matrices with clear visual indicators
-- Implemented operation categorization (real, virtual, observe)
-- Added permission enforcement mechanisms
-- Integrated permission checking with existing task system
-
-#### ⚠️ Violation Handling
-- Added violation detection and severity classification
-- Implemented violation recovery procedures
-- Created automatic safe mode fallback mechanism
-- Added violation logging to protection registry
-
-#### 🔄 Enhanced Mode Transitions
-- Updated mode transitions with permission enforcement
-- Added safe transition protocol with permission verification
-- Implemented recovery transitions for handling violations
-- Enhanced context switching during mode transitions
-
-### 📚 Documentation
-- Added permission_schema.md with full permission matrix
-- Created violation_protocol.md detailing violation handling
-- Added mode_transition_diagram.md with visual representation
-- Created permission_reference.md quick reference in cheatsheets
-- Added permission_test_cases.md with comprehensive test scenarios
-
-### 🔧 Internal Changes
-- Enhanced Ω (mode) definitions with permission references
-- Added ℙ (permission) matrices for each mode
-- Created 𝕊 (operation set) categorization
-- Added Ξ (permission check) function
-- Implemented 𝕍 (violation) handling
-- Updated Σ_update to include permission enforcement
-- Enhanced safety protocols with permission validation
-
-## v1.0.2 (2025-04-09)
-
-### 🚀 New Features
-- Added Context Reference System (Γ)
-- Implemented mode-specific context mapping (MΓ)
-- Created context behavior functions
-- Added protection-context integration
-- Implemented context commands (!af, !ad, etc.)
-
-### 📚 Documentation
-- Updated symbols.md with context symbols
-- Created context_symbols.md cheat sheet
-- Added howto_context.md with usage examples
-
-## v1.0.1 (2025-04-08)
-
-### 🚀 New Features
-- Added Code Protection System (Ψ)
-- Implemented protection behavior per mode
-- Created protection commands (!cp, !cg, etc.)
-
-### 📚 Documentation
-- Updated symbols.md with protection symbols
-- Created ProtectionCommands.md
-
-## v1.0.0 (2025-04-07)
-
-### 🚀 Initial Release
-- Core RIPER framework with 5 modes
-- Basic memory system with 5 files
-- Mode switching commands
-- Task-based permission system
-- Project phase definitions
-- Cross-reference notation
-- File system operations
-- Backup system
+### 📊 Migration Notes
+- Existing projects can continue with memory banks
+- Soft migration path recommended
+- BMAD components can be adopted incrementally
+- No breaking changes to core framework
 
 ---
-*Changelog for CursorRIPER Σ framework*
+
+## [1.0.3] - 2025-04-10
+### Added
+- Complete permission system with CRUD operations (ℙ)
+- Mode-specific permission enforcement
+- Permission violation handling with severity levels
+- Permission command shortcuts
+
+### Enhanced  
+- Protection system integration with permissions
+- Context system integration with permissions
+- Cross-reference notation for permissions
+
+---
+
+## [1.0.2] - 2025-04-09
+### Added
+- Context reference system using Γ (Gamma) symbols
+- 8 context types mapping to Cursor @ symbols
+- Mode-specific context mappings (MΓ)
+- Context command shortcuts (!af, !ac, etc.)
+- Protection-Context integration (PΓ)
+
+### Enhanced
+- Active context tracking in memory files
+- Context status indicators
+- Cross-reference notation with context
+
+---
+
+## [1.0.1] - 2025-04-09
+### Added
+- Code protection end markers (Ψ₊)
+- Protection commands (!cp, !cg, etc.)
+- Protection registry in σ₆
+
+### Enhanced
+- Protection behavior across all modes
+- Scanner validation for paired markers
+
+---
+
+## [1.0.0] - 2025-04-08
+### Initial Release
+- Core RIPER modes (Ω₁-Ω₅)
+- Memory bank system (σ₁-σ₆)
+- Project phases (Π₁-Π₄)
+- Code protection system (Ψ₁-Ψ₆)
+- Mathematical notation system
+- Symbolic framework foundation
+
+---
+*Following Semantic Versioning (MAJOR.MINOR.PATCH)*

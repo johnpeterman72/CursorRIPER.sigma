@@ -1,0 +1,120 @@
+# 🏢 CursorRIPER Σ BMAD Configuration
+# Version: 1.0.0
+# Enable/disable BMAD-Method enterprise features
+
+## 📋 BMAD-Method Integration for CursorRIPER Σ
+
+This configuration file enables BMAD-Method enterprise features within
+the CursorRIPER Σ framework, transforming it from memory-bank driven
+to PRD-driven methodology.
+
+### 🛠️ Available Components:
+
+#### Β - Role System
+# Professional role delineation and permissions
+# Product Owner, Architect, Developer, QA, DevOps roles
+# @file .cursor/rules/bmad_roles.mdc
+
+#### Ρ - PRD System
+# Product Requirements Document management
+# Transforms memory banks into structured PRDs
+# @file .cursor/rules/prd_system.mdc
+
+#### Κ - Quality Gates  
+# Enterprise-grade quality checkpoints
+# Sequential gate progression with approvals
+# @file .cursor/rules/quality_gates.mdc
+
+#### Ε - Enterprise Features
+# Documentation generation, versioning, compliance, audit
+# Professional project management capabilities
+# @file .cursor/rules/enterprise.mdc
+
+### 📝 Configuration Instructions:
+
+1. **Choose your adoption level**:
+   - **Soft Migration**: Keep memory banks, add PRD system alongside
+   - **Full Adoption**: Complete PRD-driven workflow with gates
+
+2. **Enable desired components** by uncommenting @file directives above
+
+3. **Initialize PRD structure**:
+   ```bash
+   mkdir -p prd/active prd/templates prd/archive
+   mkdir -p quality/gates quality/checklists
+   mkdir -p docs/generated docs/compliance
+   ```
+
+4. **Configure roles** for your team:
+   - Assign primary roles to team members
+   - Set up approval chains for gates
+   - Configure permissions per role
+
+### 🔄 Migration Path:
+
+#### Phase 1: Preparation
+- Enable role system (Β)
+- Familiarize team with roles
+- Keep existing memory banks
+
+#### Phase 2: PRD Introduction
+- Enable PRD system (Ρ)
+- Create first PRD from memory banks
+- Run both systems in parallel
+
+#### Phase 3: Quality Implementation
+- Enable quality gates (Κ)
+- Start with soft enforcement
+- Gradually increase strictness
+
+#### Phase 4: Full Enterprise
+- Enable enterprise features (Ε)
+- Activate compliance tracking
+- Complete migration
+
+### 📊 Component Dependencies:
+
+```
+Β (Roles) → Independent
+Ρ (PRD) → Requires Β
+Κ (Gates) → Requires Β + Ρ  
+Ε (Enterprise) → Requires all
+```
+
+### 🔗 Integration with Core Framework:
+
+- RIPER modes (Ω) map to BMAD roles (Β)
+- Memory banks (σ) migrate to PRD components (Ρ)
+- Protection system (Ψ) remains unchanged
+- Context system (Γ) enhanced with role context
+
+### ⚡ Quick Commands:
+
+```
+# Role Management
+!br - Switch role
+!bra - Show role artifacts
+
+# PRD Operations  
+!prd - Open active PRD
+!prdn - Create new PRD
+
+# Gate Control
+!kg - Check current gate
+!kga - Approve gate
+
+# Enterprise
+!edg - Generate docs
+!ecr - Compliance report
+```
+
+### ⚠️ Important Notes:
+
+- BMAD integration is optional and modular
+- Can be enabled/disabled without affecting core framework
+- Designed for teams requiring enterprise governance
+- Maintains CursorRIPER Σ's efficiency and symbolic notation
+
+For detailed setup instructions, see:
+- `/docs/bmad_integration_guide.md`
+- Individual component documentation in rule files
