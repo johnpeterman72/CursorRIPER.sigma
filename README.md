@@ -132,7 +132,7 @@ See the [Quick Start Guide](./docs/quickstart.md) for instructions on enabling G
 
 ### Optional: Enable BMAD Enterprise
 
-See the [BMAD Integration Guide](./docs/bmad_integration_guide.md) for adopting enterprise features, such as roles, PRDs, and quality gates.
+Refer to the [BMAD Integration Guide](./docs/bmad_integration_guide.md) for guidance on adopting enterprise features, including roles, PRDs, and quality gates.
 
 ### Usage
 
@@ -241,7 +241,7 @@ Check and verify permissions with shorthand commands:
 !vm - Verify mode appropriate for operation
 ```
 
-See [Permission Reference](./docs/cheatsheets/permission_reference.md) for quick reference.
+See [Permission Reference](./docs/permission_reference.md) for quick reference.
 
 ## ⚠️ Safety Features
 
