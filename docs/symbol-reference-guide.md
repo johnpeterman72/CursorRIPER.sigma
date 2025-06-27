@@ -1,6 +1,6 @@
 ![CursorRIPER♦Σ](../res/github-header-sigma-sm.png)
 # 🔣 CursorRIPER Σ Comprehensive Symbol Reference Guide
-*v3.0 | Created: 2025-04-10 | Updated: 2025-04-26*
+*v3.0 | Created: 2025-04-10 | Updated: 2025-06-27*
 
 ## 🆕 What's New in v3.0
 - Added MCP service integrations: GitHub (Θ), Web Search (Λ), Puppeteer (Υ), Docker (Ξ)
