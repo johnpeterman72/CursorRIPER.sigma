@@ -194,5 +194,5 @@ This architecture ensures that:
 ## 🔖 References
 
 - [Model Context Protocol Documentation](https://modelcontextprotocol.github.io/)
-- [CursorRIPER♦Σ Symbols Reference](./symbol-reference-guide.md)
+- [CursorRIPER♦Σ Symbols Reference]([./symbol-reference-guide.md](https://github.com/johnpeterman72/CursorRIPER.sigma/blob/main/docs/symbol-reference-guide.md)
 - [MCP Filesystem Server Documentation](https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem)
