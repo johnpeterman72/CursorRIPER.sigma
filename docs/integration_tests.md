@@ -409,4 +409,4 @@ jobs:
 ```
 
 ---
-*Test Suite v1.0 | Framework v1.0.4*
+*Test Suite v1.0 | Framework v1.0.5*
