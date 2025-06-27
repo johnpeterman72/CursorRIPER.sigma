@@ -2,11 +2,11 @@
 # CursorRIPER♦Σ (Sigma)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-![Version](https://img.shields.io/badge/version-1.0.4-green)
+![Version](https://img.shields.io/badge/version-1.0.5-green)
 
-> A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, and permission management capabilities.
+> A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, permission management, MCP service integrations, and enterprise BMAD-Method capabilities.
 
-Current version: [RIPERsigma1.0.4.mdc](.cursor/rules/RIPERsigma1.0.4.mdc)
+Current version: [RIPERsigma1.0.5.mdc](.cursor/rules/RIPERsigma1.0.5.mdc)
 
 Try out [CursorRIPER.sigma-lite](https://github.com/johnpeterman72/CursorRIPER.sigma-lite), a Lite version without context references, permissions, or code protection.
 
@@ -18,6 +18,7 @@ The framework reduces ~15,000 words of instructions to under 1,000 while preserv
 
 ## 🌟 Key Features
 
+### Core Framework
 - **Symbolic Notation**: Uses Greek letters (Ω, Π, Σ, Δ, Γ, ℙ), subscripts, and emoji for extreme conciseness
 - **RIPER Workflow Modes**: Research, Innovate, Plan, Execute, Review (🔍R, 💡I, 📝P, ⚙️E, 🔎RV)
 - **Structured Memory System**: Standardized file templates with cross-referencing
@@ -26,6 +27,18 @@ The framework reduces ~15,000 words of instructions to under 1,000 while preserv
 - **Code Protection System**: Protects critical code sections with intelligent comment annotations
 - **Context Reference System**: Manages and tracks file, code, and document references
 - **Permission System**: Enforces mode-specific CRUD operations and handles violations
+
+### MCP Service Integrations (Optional)
+- **GitHub Integration (Θ)**: Repository management, PRs, issues, branches
+- **Web Search (Λ)**: Brave Search API for research (blocked in EXECUTE mode!)
+- **Browser Automation (Υ)**: Puppeteer/Playwright for testing and scraping
+- **Docker Integration (Ξ)**: Container and compose management
+
+### BMAD Enterprise Features (Optional)
+- **Role System (Β)**: Product Owner, Architect, Developer, QA, DevOps roles
+- **PRD Management (Ρ)**: Transform from memory-bank to PRD-driven development
+- **Quality Gates (Κ)**: Sequential approval workflow with checklists
+- **Enterprise Features (Ε)**: Documentation generation, versioning, compliance, audit
 
 ## 🧠 Framework Structure
 
@@ -97,7 +110,7 @@ The framework reduces ~15,000 words of instructions to under 1,000 while preserv
 
 ## 🚀 Getting Started
 
-### Installation
+### Quick Start (Core Framework Only)
 
 1. Create a memory bank directory in your project:
 
@@ -112,6 +125,14 @@ mkdir -p /memory-bank/backups
 ```
 /start
 ```
+
+### Optional: Enable MCP Services
+
+See [Quick Start Guide](./docs/quickstart.md) for enabling GitHub, Web Search, Browser Automation, and Docker integrations.
+
+### Optional: Enable BMAD Enterprise
+
+See [BMAD Integration Guide](./docs/bmad_integration_guide.md) for adopting enterprise features like roles, PRDs, and quality gates.
 
 ### Usage
 
@@ -234,7 +255,19 @@ See [Permission Reference](./docs/cheatsheets/permission_reference.md) for quick
 
 ## 🔣 Symbol Reference
 
-See the [Symbol Reference Guide](./docs/symbol-reference-guide.md) for a complete list of symbols and notation used in the framework.
+See the [Symbol Reference Guide](./docs/symbol-reference-guide.md) (v3.0) for a complete list of symbols and notation used in the framework, including:
+- Core framework symbols (Ω, Π, Σ, Ψ, Γ, ℙ)
+- MCP service symbols (Θ, Λ, Υ, Ξ)
+- BMAD enterprise symbols (Β, Ρ, Κ, Ε)
+- All command shortcuts and integrations
+
+## 📋 Additional Resources
+
+- [Quick Start Guide](./docs/quickstart.md) - Get started in 5 minutes
+- [BMAD Integration Guide](./docs/bmad_integration_guide.md) - Enterprise adoption
+- [Integration Tests](./docs/integration_tests.md) - Test scenarios and examples
+- [MCP Setup Guides](./docs/mcp/) - Individual service setup instructions
+- [Changelog](./CHANGELOG.md) - Detailed version history
 
 ## 🤝 Contributing
 
