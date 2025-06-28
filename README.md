@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Version](https://img.shields.io/badge/version-1.0.5-green)
 
-**[New Wiki Documents](https://github.com/johnpeterman72/CursorRIPER.sigma/wiki)
+## 🏛️[New Wiki Documents](https://github.com/johnpeterman72/CursorRIPER.sigma/wiki)
 
 > A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, permission management, MCP service integrations, and enterprise BMAD-Method capabilities.
 
