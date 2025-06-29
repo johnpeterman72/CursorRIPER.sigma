@@ -10,7 +10,7 @@
 
 Current version: [ripersigma105.mdc](.cursor/rules/ripersigma105.mdc)
 
-Try out [CursorRIPER.sigma-lite](https://github.com/johnpeterman72/cursorriper.sigma-lite), a Lite version without context references, permissions, or code protection.
+Try out [cursorriper.sigma-lite](https://github.com/johnpeterman72/cursorriper.sigma-lite), a Lite version without context references, permissions, or code protection.
 
 ## 📚 Overview
 
