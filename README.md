@@ -8,7 +8,7 @@
 
 > A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, permission management, MCP service integrations, and enterprise BMAD-Method capabilities.
 
-Current version: [RIPERsigma1.0.5.mdc](.cursor/rules/RIPERsigma1.0.5.mdc)
+Current version: [RIPERsigma1.0.5.mdc](.cursor/rules/ripersigma105.mdc)
 
 Try out [CursorRIPER.sigma-lite](https://github.com/johnpeterman72/CursorRIPER.sigma-lite), a Lite version without context references, permissions, or code protection.
 
