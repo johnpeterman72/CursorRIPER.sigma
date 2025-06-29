@@ -8,13 +8,13 @@
 
 > A symbolic, ultra-efficient AI prompt framework for software development assistance with code protection, context reference, permission management, MCP service integrations, and enterprise BMAD-Method capabilities.
 
-Current version: [RIPERsigma1.0.5.mdc](.cursor/rules/ripersigma105.mdc)
+Current version: [ripersigma105.mdc](.cursor/rules/ripersigma105.mdc)
 
-Try out [CursorRIPER.sigma-lite](https://github.com/johnpeterman72/CursorRIPER.sigma-lite), a Lite version without context references, permissions, or code protection.
+Try out [CursorRIPER.sigma-lite](https://github.com/johnpeterman72/cursorriper.sigma-lite), a Lite version without context references, permissions, or code protection.
 
 ## 📚 Overview
 
-CursorRIPER♦Σ is a highly optimized, symbolic implementation of the [CursorRIPER framework](https://github.com/johnpeterman72/CursorRIPER) designed to enhance AI-assisted software development. It utilizes a symbolic notation system that incorporates mathematical operators, emojis, and Greek letters to compress complex development workflows into a compact yet comprehensive token footprint.
+CursorRIPER♦Σ is a highly optimized, symbolic implementation of the [CursorRIPER framework](https://github.com/johnpeterman72/cursorriper) designed to enhance AI-assisted software development. It utilizes a symbolic notation system that incorporates mathematical operators, emojis, and Greek letters to compress complex development workflows into a compact yet comprehensive token footprint.
 
 The framework reduces ~15,000 words of instructions to under 1,000 while preserving full functionality, making it dramatically more efficient for AI token usage. The idea came from [Tof](https://forum.cursor.com/t/user-rules-with-memory-errors-tracking-rules-generation/68321)
 
